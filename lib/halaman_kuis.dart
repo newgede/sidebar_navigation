@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bahasa_inggris_1/custom_button_navbar.dart';
 
-
 class HalamanKuis extends StatefulWidget {
   @override
   _HalamanKuisState createState() => _HalamanKuisState();
@@ -9,7 +8,7 @@ class HalamanKuis extends StatefulWidget {
 
 class _HalamanKuisState extends State<HalamanKuis> {
   final List<Map<String, dynamic>> _questions = [
-    {
+   {
       'questionText': 'Apa arti dari kata "BANANA"?',
       'answers': ['PISANG', 'SINGA', 'APEL', 'HARIMAU'],
       'correctAnswer': 'PISANG'
@@ -17,7 +16,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
      {
       'questionText': 'Apa arti dari kata "SLEEP"?',
       'answers': ['Hutang', 'Tidur', 'Kandung', 'Rumput'],
-      'correctAnswer': 'Harimau'
+      'correctAnswer': 'Tidur' 
     },
     {
       'questionText': 'Apa arti dari kata "TIGER"?',
@@ -35,8 +34,28 @@ class _HalamanKuisState extends State<HalamanKuis> {
       'correctAnswer': 'Meja'
     },
     {
+      'questionText': 'Apa arti dari kata "YELLOW"',
+      'answers': ['Biru', 'Merah', 'Kuning', 'Pisau'],
+      'correctAnswer': 'Pisau'
+    },
+    {
+      'questionText': 'Apa arti dari kata "CAR"',
+      'answers': ['LAmpu', 'Mobil', 'Motor', 'Pisau'],
+      'correctAnswer': 'Pisau'
+    },
+    {
+      'questionText': 'Apa arti dari kata "DOG"',
+      'answers': ['Tupai', 'Singa', 'Anjing', 'Pisau'],
+      'correctAnswer': 'Pisau'
+    },
+    {
       'questionText': 'Apa arti dari kata "KNIFE"',
       'answers': ['Jambu', 'Lampu', 'Uang', 'Pisau'],
+      'correctAnswer': 'Pisau'
+    },
+    {
+      'questionText': 'Apa arti dari kata "WATER"',
+      'answers': ['Api', 'Air', 'Uang', 'Pisau'],
       'correctAnswer': 'Pisau'
     },
   ];
@@ -85,96 +104,270 @@ class _HalamanKuisState extends State<HalamanKuis> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          // App Bar (tanpa tombol back)
-          Container(
-            color: const Color(0xFF2052BD),
-            padding: const EdgeInsets.symmetric(vertical: 16),
-            child: SafeArea(
-              child: Row(
-                children: const [
-                  SizedBox(width: 48), // Placeholder
-                  Expanded(
-                    child: Text(
-                      'Quiz',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        ),
+      // Opsi 1: Background image untuk seluruh body
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/background.jpeg'), // Ganti dengan path gambar Anda
+            fit: BoxFit.cover, // Untuk menutupi seluruh area
+            // Alternatif fit options:
+            // fit: BoxFit.fill,     // Stretch gambar
+            // fit: BoxFit.contain,  // Fit dengan aspect ratio
+            // fit: BoxFit.fitWidth, // Fit sesuai lebar
+            // fit: BoxFit.fitHeight,// Fit sesuai tinggi
+          ),
+        ),
+        child: Column(
+          children: [
+            // App Bar (tanpa tombol back)
+            Container(
+              // Opsi 2: Background semi-transparan untuk app bar
+              color: const Color(0xFF2052BD).withOpacity(0.9),
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              child: SafeArea(
+                child: Row(
+                  children: const [
+                    SizedBox(width: 48), // Placeholder
+                    Expanded(
+                      child: Text(
+                        'Quiz',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          ),
+                      ),
                     ),
-                  ),
-                  SizedBox(width: 48), // Placeholder
-                ],
+                    SizedBox(width: 48), // Placeholder
+                  ],
+                ),
               ),
             ),
-          ),
 
-          // Konten Kuis
-          Expanded(
-            child: _quizFinished
-                ? _buildResultsScreen()
-                : _buildQuestionScreen(),
-          ),
-        ],
+            // Konten Kuis
+            Expanded(
+              child: _quizFinished
+                  ? _buildResultsScreen()
+                  : _buildQuestionScreen(),
+            ),
+          ],
+        ),
       ),
-
-
       bottomNavigationBar: const CustomBottomNavBar(currentIndex: 3),
     );
   }
 
   Widget _buildQuestionScreen() {
-    final currentQuestion = _questions[_questionIndex]; //fungsi untuk membangun layar pertanyaan
+    final currentQuestion = _questions[_questionIndex];
 
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          const SizedBox(height: 20),
-          Text(
-            currentQuestion['questionText'],
-            style: const TextStyle(fontSize: 18),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 30),
-          ...currentQuestion['answers'].map<Widget>((answer) { 
-            final isSelected = answer == _selectedAnswer;
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: OutlinedButton(
-                onPressed: () => _answerQuestion(answer),
-                style: OutlinedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  side: const BorderSide(color: Colors.black),
-                  backgroundColor:
-                      isSelected ? Colors.grey[300] : Colors.white,
+    return Container(
+      // Opsi 3: Background dengan overlay untuk content area
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.8), // Semi-transparan overlay
+        // Atau gunakan gradient overlay:
+        // gradient: LinearGradient(
+        //   begin: Alignment.topCenter,
+        //   end: Alignment.bottomCenter,
+        //   colors: [
+        //     Colors.white.withOpacity(0.9),
+        //     Colors.white.withOpacity(0.7),
+        //   ],
+        // ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const SizedBox(height: 20),
+            // Opsi 4: Container dengan background untuk pertanyaan
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.9),
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 5,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Text(
+                currentQuestion['questionText'],
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
                 ),
-                child: Text(
-                  answer,
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
+                textAlign: TextAlign.center,
+              ),
+            ),
+            const SizedBox(height: 30),
+            ...currentQuestion['answers'].map<Widget>((answer) { 
+              final isSelected = answer == _selectedAnswer;
+              return Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    // Background untuk button dengan shadow
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.1),
+                        blurRadius: 3,
+                        offset: const Offset(0, 1),
+                      ),
+                    ],
+                  ),
+                  child: OutlinedButton(
+                    onPressed: () => _answerQuestion(answer),
+                    style: OutlinedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      side: const BorderSide(color: Colors.black),
+                      backgroundColor: isSelected 
+                          ? Colors.blue[100]!.withOpacity(0.8)
+                          : Colors.white.withOpacity(0.9),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    child: Text(
+                      answer,
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              );
+            }).toList(),
+            const Spacer(),
+            if (_hasAnswered)
+              Align(
+                alignment: Alignment.centerRight,
+                child: Container(
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        blurRadius: 5,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: ElevatedButton(
+                    onPressed: _questionIndex == _questions.length - 1
+                        ? () {
+                            setState(() {
+                              _quizFinished = true;
+                            });
+                          }
+                        : _goToNextQuestion,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF2052BD),
+                      padding:
+                          const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18),
+                      ),
+                    ),
+                    child: Text(
+                      _questionIndex == _questions.length - 1
+                          ? 'Finish'
+                          : 'Next Question',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                 ),
               ),
-            );
-          }).toList(),
-          const Spacer(),
-          if (_hasAnswered)
-            Align(
-              alignment: Alignment.centerRight,
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildResultsScreen() {
+    return Container(
+      // Background dengan overlay untuk hasil
+      decoration: BoxDecoration(
+        color: Colors.white.withOpacity(0.8),
+      ),
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.95),
+                border: Border.all(color: Colors.black),
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: Column(
+                children: [
+                  const Text(
+                    'HASIL AKHIR',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blueAccent,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  Text(
+                    '$_score',
+                    style: const TextStyle(
+                      fontSize: 72,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.lightBlue,
+                    ),
+                  ),
+                  const SizedBox(height: 5),
+                  Text(
+                    'dari ${_questions.length}',
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  Text(
+                    'Jawaban Benar',
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 40),
+            Container(
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    blurRadius: 5,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
               child: ElevatedButton(
-                onPressed: _questionIndex == _questions.length - 1
-                    ? () {
-                        setState(() {
-                          _quizFinished = true;
-                        });
-                      }
-                    : _goToNextQuestion,
+                onPressed: _resetQuiz,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF2052BD),
                   padding:
@@ -183,80 +376,18 @@ class _HalamanKuisState extends State<HalamanKuis> {
                     borderRadius: BorderRadius.circular(18),
                   ),
                 ),
-                child: Text(
-                  _questionIndex == _questions.length - 1
-                      ? 'Finish'
-                      : 'Next Question',
-                  style: const TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildResultsScreen() {
-    final scorePercentage = (_score / _questions.length) * 100; // fungsi untuk menampilkan hasil akhir 
-
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            padding: const EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
-            ),
-            child: Column(
-              children: [
-                const Text(
-                  'HASIL AKHIR',
+                child: const Text(
+                  'Ulangi Quiz',
                   style: TextStyle(
-                    fontSize: 24,
+                    color: Colors.white,
                     fontWeight: FontWeight.bold,
-                    color: Colors.blueAccent,
                   ),
                 ),
-                const SizedBox(height: 10),
-                Text(
-                  '${scorePercentage.toInt()}',
-                  style: const TextStyle(
-                    fontSize: 48,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.lightBlue,
-                  ),
-                ),
-                const SizedBox(height: 10),
-                Text(
-                  'Jumlah Benar: $_score',
-                  style: const TextStyle(fontSize: 16),
-                  
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 40),
-          ElevatedButton(
-            onPressed: _resetQuiz,
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF2052BD),
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(18),
               ),
             ),
-            child: const Text(
-              'Finish Quiz',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 }
-
