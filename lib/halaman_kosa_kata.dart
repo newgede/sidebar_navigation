@@ -28,11 +28,11 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
           mainAxisSize: MainAxisSize.min,
           children: [
             TextField(
-              decoration: InputDecoration(labelText: 'Kata'),
+              decoration: InputDecoration(labelText: 'Kata 🇬🇧'),
               onChanged: (value) => kataBaru = value,
             ),
             TextField(
-              decoration: InputDecoration(labelText: 'Arti'),
+              decoration: InputDecoration(labelText: 'Arti 🇲🇨'),
               onChanged: (value) => artiBaru = value,
             ),
           ],
@@ -52,7 +52,8 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
                 Navigator.of(context).pop();
 
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Kata "$kataBaru" berhasil ditambahkan!')),
+                  SnackBar(
+                      content: Text('Kata "$kataBaru" berhasil ditambahkan!')),
                 );
               }
             },
@@ -66,7 +67,7 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Daftar Kosa Kata', style : TextStyle(color:Colors.white)),
+        title: Text('Daftar Kosa Kata', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.indigo[800],
       ),
       body: ListView.builder(
@@ -93,11 +94,10 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _bukaFormTambahKata,
-        child: Icon(Icons.add, color:Colors.white),
+        child: Icon(Icons.add, color: Colors.white),
         backgroundColor: Colors.indigo[800],
       ),
       bottomNavigationBar: const CustomBottomNavBar(currentIndex: 1),
     );
   }
 }
-
