@@ -1,16 +1,6 @@
-# flutter_bahasa_inggris_1
+Nama Kelompok
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Ni Komang Sintya Dewi 42230012
+2. Luh Gede Sindy Pratiwi 42230014
+3. I Gede Khrisna Paramartha 42230053
+4. Ade Muliadi 42230064
