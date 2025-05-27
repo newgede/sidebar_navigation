@@ -36,17 +36,17 @@ class _HalamanKuisState extends State<HalamanKuis> {
     {
       'questionText': 'Apa arti dari kata "YELLOW"',
       'answers': ['Biru', 'Merah', 'Kuning', 'Pisau'],
-      'correctAnswer': 'Pisau'
+      'correctAnswer': 'Kuning'
     },
     {
       'questionText': 'Apa arti dari kata "CAR"',
-      'answers': ['LAmpu', 'Mobil', 'Motor', 'Pisau'],
-      'correctAnswer': 'Pisau'
+      'answers': ['Lampu', 'Mobil', 'Motor', 'Pisau'],
+      'correctAnswer': 'Mobil'
     },
     {
       'questionText': 'Apa arti dari kata "DOG"',
       'answers': ['Tupai', 'Singa', 'Anjing', 'Pisau'],
-      'correctAnswer': 'Pisau'
+      'correctAnswer': 'Anjing'
     },
     {
       'questionText': 'Apa arti dari kata "KNIFE"',
@@ -56,7 +56,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
     {
       'questionText': 'Apa arti dari kata "WATER"',
       'answers': ['Api', 'Air', 'Uang', 'Pisau'],
-      'correctAnswer': 'Pisau'
+      'correctAnswer': 'Air '
     },
   ];
 
