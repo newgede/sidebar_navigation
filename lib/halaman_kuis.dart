@@ -13,83 +13,88 @@ class _HalamanKuisState extends State<HalamanKuis> {
   final Map<String, List<Map<String, dynamic>>> _allQuestions = {
     'Easy': [
       {
-        'questionText': 'Apa arti dari kata "BANANA"?',
-        'answers': ['PISANG', 'SINGA', 'APEL', 'HARIMAU'],
-        'correctAnswer': 'PISANG'
+        'questionText': 'What is the name of the fruit in the picture?',
+        'answers': ['Banana', 'Grape', 'Apple', 'Lychee'],
+        'correctAnswer': 'Banana',
+        'image': 'assets/images/banana.jpg' // Ditambahkan: Path gambar untuk soal ini
       },
       {
-        'questionText': 'Apa arti dari kata "APPLE"?',
-        'answers': ['Babi', 'Ayam', 'Anggur', 'Apel'],
-        'correctAnswer': 'Apel'
+        'questionText': 'What is the name of the fruit in the picture?',
+        'answers': ['Kiwi', 'Melon', 'Apple', 'Banana'],
+        'correctAnswer': 'Apple',
+        'image': 'assets/images/apple.jpg' // Ditambahkan: Path gambar untuk soal ini
+      },
+       {
+        'questionText': 'What is the name of the Animal in the picture?',
+        'answers': ['Cat', 'Dog', 'Tiger', 'Lion'],
+        'correctAnswer': 'Tiger',
+        'image': 'assets/images/tiger.jpg' // Ditambahkan: Path gambar untuk soal ini
       },
       {
-        'questionText': 'Apa arti dari kata "CAR"',
-        'answers': ['Lampu', 'Mobil', 'Motor', 'Pisau'],
-        'correctAnswer': 'Mobil'
+        'questionText': 'What is the name of the Animal in the picture?',
+        'answers': ['Crocodile', 'Squirrel', 'Deer', 'Bear'],
+        'correctAnswer': 'Deer',
+        'image': 'assets/images/deer.jpg' // Ditambahkan: Path gambar untuk soal ini
       },
       {
-        'questionText': 'Apa arti dari kata "DOG"',
-        'answers': ['Tupai', 'Singa', 'Anjing', 'Pisau'],
-        'correctAnswer': 'Anjing'
-      },
-      {
-        'questionText': 'Apa arti dari kata "WATER"',
-        'answers': ['Api', 'Air', 'Uang', 'Pisau'],
-        'correctAnswer': 'Air'
+        'questionText': 'What is the name of the Animal in the picture?',
+        'answers': ['Pig', 'Cow', 'Chicken', 'Duck'],
+        'correctAnswer': 'Chicken',
+        'image': 'assets/images/chicken.jpg' // Ditambahkan: Path gambar untuk soal ini
       },
     ],
     'Medium': [
       {
-        'questionText': 'Apa arti dari kata "SLEEP"?',
-        'answers': ['Hutang', 'Tidur', 'Kandung', 'Rumput'],
-        'correctAnswer': 'Tidur' 
+        'questionText': 'Susunlah kata "M-L-O-N-E-E-R-A-W-T" ini agar menjadi sebuah kata!',
+        'answers': ['Metermalon', 'Melonwater', 'Watermelon', 'Lomanmeter'],
+        'correctAnswer': 'Watermelon'
       },
       {
-        'questionText': 'Apa arti dari kata "TABLE"?',
-        'answers': ['Pintar', 'Muliadi', 'Meja', 'Baju'],
-        'correctAnswer': 'Meja'
+        'questionText': 'Susunlah kata "A-R-G-C-I-L" ini agar menjadi sebuah kata!',
+        'answers': ['Garlic', 'Cirgal', 'Cragil', ''],
+        'correctAnswer': 'Garlic'
       },
       {
-        'questionText': 'Apa arti dari kata "YELLOW"',
-        'answers': ['Biru', 'Merah', 'Kuning', 'Pisau'],
-        'correctAnswer': 'Kuning'
+        'questionText': 'Susunlah kata "S-W-R-R-A-T-Y-E-B-R" ini agar menjadi sebuah kata!',
+        'answers': ['Apple', 'Grape', 'Cherry', 'Strawberry'],
+        'correctAnswer': 'Strawberry'
       },
       {
-        'questionText': 'Apa arti dari kata "KNIFE"',
-        'answers': ['Jambu', 'Lampu', 'Uang', 'Pisau'],
-        'correctAnswer': 'Pisau'
+        'questionText': 'Susunlah kata "  C-O-O-C-E-I-L-D-R" ini agar menjadi sebuah kata!',
+        'answers': ['Lizard', 'Crocodile', 'Lion', 'Crocodeli'],
+        'correctAnswer': 'Crocodile'
       },
       {
-        'questionText': 'Apa arti dari kata "BEAUTIFUL"?',
-        'answers': ['Jelek', 'Cantik', 'Besar', 'Kecil'],
-        'correctAnswer': 'Cantik'
+        'questionText': 'Apa arti dari kata "I-G-R-T-E"?',
+        'answers': ['Girte', 'Grite', 'Tiger', 'Trige'],
+        'correctAnswer': 'Tiger'
       },
     ],
     'Hard': [
       {
-        'questionText': 'Apa arti dari kata "TIGER"?',
-        'answers': ['Batu', 'Sapi', 'Bandung', 'Harimau'],
-        'correctAnswer': 'Harimau'
+        'questionText': 'Susunlah kata "M-L-O-N-E-E-R-A-W-T" ini agar menjadi sebuah kata!',
+        'answers': ['Cucumber', 'Onion', 'Watermelon', 'Lychee'],
+        'correctAnswer': 'Watermelon'
       },
       {
-        'questionText': 'Apa arti dari kata "ENTREPRENEUR"?',
-        'answers': ['Pegawai', 'Pengusaha', 'Pelajar', 'Dokter'],
-        'correctAnswer': 'Pengusaha'
+        'questionText': 'Susunlah kata "A-R-G-C-I-L" ini agar menjadi sebuah kata!',
+        'answers': ['Garlic', 'Eggplant', 'Carrot', 'Broccoli'],
+        'correctAnswer': 'Garlic'
       },
       {
-        'questionText': 'Apa arti dari kata "MAGNIFICENT"?',
-        'answers': ['Menakjubkan', 'Biasa', 'Buruk', 'Sederhana'],
-        'correctAnswer': 'Menakjubkan'
+        'questionText': 'Susunlah kata "S-W-R-R-A-T-Y-E-B-R" ini agar menjadi sebuah kata!',
+        'answers': ['Apple', 'Grape', 'Cherry', 'Strawberry'],
+        'correctAnswer': 'Strawberry'
       },
       {
-        'questionText': 'Apa arti dari kata "EXTRAORDINARY"?',
-        'answers': ['Biasa', 'Luar biasa', 'Jelek', 'Sedang'],
-        'correctAnswer': 'Luar biasa'
+        'questionText': 'Susunlah kata "  C-O-O-C-E-I-L-D-R" ini agar menjadi sebuah kata!',
+        'answers': ['Lizard', 'Crocodile', 'Lion', 'Crocodeli'],
+        'correctAnswer': 'Crocodile'
       },
       {
-        'questionText': 'Apa arti dari kata "SOPHISTICATED"?',
-        'answers': ['Sederhana', 'Canggih', 'Mudah', 'Kasar'],
-        'correctAnswer': 'Canggih'
+        'questionText': 'Apa arti dari kata "I-G-R-T-E"?',
+        'answers': ['Girte', 'Grite', 'Tiger', 'Trige'],
+        'correctAnswer': 'Tiger'
       },
     ],
   };
@@ -100,7 +105,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
   int _score = 0;
   bool _quizFinished = false;
   bool _categorySelected = false;
-  bool _showWelcome = true; // Tambahan untuk welcome screen
+  bool _showWelcome = true;
 
   String? _selectedAnswer;
   bool _hasAnswered = false;
@@ -130,10 +135,10 @@ class _HalamanKuisState extends State<HalamanKuis> {
       if (_selectedAnswer != null && _selectedAnswer == _questions[_questionIndex]['correctAnswer']) {
         _score--;
       }
-      
+
       _selectedAnswer = selectedAnswer;
       _hasAnswered = true;
-      
+
       // Tambah score jika jawaban baru benar
       if (selectedAnswer == _questions[_questionIndex]['correctAnswer']) {
         _score++;
@@ -167,7 +172,6 @@ class _HalamanKuisState extends State<HalamanKuis> {
     });
   }
 
- 
   void _backToWelcome() {
     setState(() {
       _showWelcome = true;
@@ -204,7 +208,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
                       child: Text(
                         _showWelcome
                             ? 'Quiz Bahasa Inggris'
-                            : _categorySelected 
+                            : _categorySelected
                                 ? 'Quiz - $_selectedCategory'
                                 : 'Pilih Tingkat Kesulitan',
                         textAlign: TextAlign.center,
@@ -232,7 +236,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
             ),
             ],
         ),
-        
+
       bottomNavigationBar: const CustomBottomNavBar(currentIndex: 3),
       );
      }
@@ -271,13 +275,13 @@ class _HalamanKuisState extends State<HalamanKuis> {
               child: Column(
                 children: [
                   // Gambar lingkaran tanpa background biru muda
-                  const SizedBox( // Tambahkan const jika memungkinkan
-                    width: 150, // Ubah ukuran lebar gambar (misal, dari 80 ke 120)
-                    height: 150, // Ubah ukuran tinggi gambar (misal, dari 80 ke 120)
-                    child: ClipOval( // const di sini karena semua child-nya juga const
+                  const SizedBox(
+                    width: 150,
+                    height: 150,
+                    child: ClipOval(
                       child: Image(
                         image: AssetImage('assets/images/orang tua.jpg'),
-                        fit: BoxFit.cover, // Gunakan BoxFit.cover untuk mengisi lingkaran dengan baik
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
@@ -437,22 +441,22 @@ class _HalamanKuisState extends State<HalamanKuis> {
             ),
             const SizedBox(height: 40),
             _buildCategoryButton(
-              'Easy', 
-              'Mudah (5 soal)', 
+              'Easy',
+              'Mudah (5 soal)',
               Colors.green,
               Icons.sentiment_satisfied,
             ),
             const SizedBox(height: 20),
             _buildCategoryButton(
-              'Medium', 
-              'Sedang (5 soal)', 
+              'Medium',
+              'Sedang (5 soal)',
               Colors.orange,
               Icons.sentiment_neutral,
             ),
             const SizedBox(height: 20),
             _buildCategoryButton(
-              'Hard', 
-              'Sulit (5 soal)', 
+              'Hard',
+              'Sulit (5 soal)',
               Colors.red,
               Icons.sentiment_very_dissatisfied,
             ),
@@ -536,6 +540,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
 
   Widget _buildQuestionScreen() {
     final currentQuestion = _questions[_questionIndex];
+    final String? imageUrl = currentQuestion['image']; // Ambil path gambar dari data soal
 
     return Container(
       decoration: BoxDecoration(
@@ -601,18 +606,31 @@ class _HalamanKuisState extends State<HalamanKuis> {
                 minHeight: 6,
               ),
             ),
+
+            // **BAGIAN INI YANG DIUBAH UNTUK LAYOUT GAMBAR DAN PERTANYAAN**
+            // Gambar (di tengah)
+            if (imageUrl != null)
+              Center( // Memastikan gambar di tengah
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 10.0), // Mengurangi jarak bawah gambar menjadi 10.0
+                  child: ClipRRect( // Menggunakan ClipRRect untuk sudut membulat
+                    borderRadius: BorderRadius.circular(12), // Sudut membulat
+                    child: Image.asset(
+                      imageUrl,
+                      height: 180, // Sesuaikan tinggi gambar agar terlihat jelas
+                      fit: BoxFit.cover, // Memastikan gambar mengisi area tanpa distorsi
+                    ),
+                  ),
+                ),
+              ),
+
+            // Teks pertanyaan (tanpa boxShadow untuk menghilangkan "border")
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.9),
                 borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 5,
-                    offset: const Offset(0, 2),
-                  ),
-                ],
+                // boxShadow telah dihapus/dihilangkan di sini
               ),
               child: Text(
                 currentQuestion['questionText'],
@@ -623,8 +641,10 @@ class _HalamanKuisState extends State<HalamanKuis> {
                 textAlign: TextAlign.center,
               ),
             ),
-            const SizedBox(height: 30),
-            ...currentQuestion['answers'].map<Widget>((answer) { 
+            const SizedBox(height: 30), // Spasi di bawah pertanyaan
+
+            // ... (bagian jawaban tetap sama)
+            ...currentQuestion['answers'].map<Widget>((answer) {
               final isSelected = answer == _selectedAnswer;
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -646,7 +666,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
                         color: isSelected ? _getCategoryColor() : Colors.black,
                         width: isSelected ? 2 : 1,
                       ),
-                      backgroundColor: isSelected 
+                      backgroundColor: isSelected
                           ? _getCategoryColor().withOpacity(0.1)
                           : Colors.white.withOpacity(0.9),
                       shape: RoundedRectangleBorder(
@@ -715,7 +735,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
   Widget _buildResultsScreen() {
     double percentage = (_score / _questions.length) * 100;
     String grade = _getGrade(percentage);
-    
+
     return Container(
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(0.8),
