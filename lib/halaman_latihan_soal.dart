@@ -86,7 +86,7 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.blue[800],
+        backgroundColor: Colors.blue,
       ),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
@@ -118,7 +118,7 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
               child: ElevatedButton(
                 onPressed: handleNext,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue[800],
+                  backgroundColor: Colors.blue,
                   padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                 ),
                 child: const Text(

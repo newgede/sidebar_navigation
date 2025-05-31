@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bahasa_inggris_1/halaman_kategori.dart';
 import 'package:flutter_bahasa_inggris_1/halaman_kosa_kata.dart';
 import 'package:flutter_bahasa_inggris_1/halaman_kuis.dart';
 import 'package:flutter_bahasa_inggris_1/halaman_latihan_soal.dart';
@@ -17,7 +18,10 @@ class CustomBottomNavBar extends StatelessWidget {
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) =>  HalamanUtama()));
         break;
       case 1:
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HalamanKosaKata()));
+         Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => HalamanKategori()),
+        );
         break;
       case 2:
         Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const HalamanLatihanSoal()));
@@ -32,9 +36,9 @@ class CustomBottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
-      backgroundColor: const Color(0xFF2052BD),
+      backgroundColor: const Color.fromARGB(255, 60, 117, 239),
       selectedItemColor: Colors.white,
-      unselectedItemColor: Colors.white70,
+      unselectedItemColor: Colors.white,
       currentIndex: currentIndex,
       onTap: (index) => _onItemTapped(context, index),
       items: const [
