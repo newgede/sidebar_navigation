@@ -16,31 +16,31 @@ class _HalamanKuisState extends State<HalamanKuis> {
         'questionText': 'What is the name of the fruit in the picture?',
         'answers': ['Banana', 'Grape', 'Apple', 'Lychee'],
         'correctAnswer': 'Banana',
-        'image': 'assets/images/banana.jpg' // Ditambahkan: Path gambar untuk soal ini
+        'image': 'assets/images/banana.jpg' 
       },
       {
         'questionText': 'What is the name of the fruit in the picture?',
         'answers': ['Kiwi', 'Melon', 'Apple', 'Banana'],
         'correctAnswer': 'Apple',
-        'image': 'assets/images/apple.jpg' // Ditambahkan: Path gambar untuk soal ini
+        'image': 'assets/images/apple.jpg' 
       },
        {
         'questionText': 'What is the name of the Animal in the picture?',
-        'answers': ['Cat', 'Dog', 'Tiger', 'Lion'],
-        'correctAnswer': 'Tiger',
-        'image': 'assets/images/tiger.jpg' // Ditambahkan: Path gambar untuk soal ini
+        'answers': ['Cat', 'Dog', 'Bird', 'Lion'],
+        'correctAnswer': 'Bird',
+        'image': 'assets/images/bird.jpg' 
       },
       {
         'questionText': 'What is the name of the Animal in the picture?',
         'answers': ['Crocodile', 'Squirrel', 'Deer', 'Bear'],
         'correctAnswer': 'Deer',
-        'image': 'assets/images/deer.jpg' // Ditambahkan: Path gambar untuk soal ini
+        'image': 'assets/images/deer.jpg' 
       },
       {
         'questionText': 'What is the name of the Animal in the picture?',
         'answers': ['Pig', 'Cow', 'Chicken', 'Duck'],
-        'correctAnswer': 'Chicken',
-        'image': 'assets/images/chicken.jpg' // Ditambahkan: Path gambar untuk soal ini
+        'correctAnswer': 'Cow',
+        'image': 'assets/images/cow.jpg' 
       },
     ],
     'Medium': [
@@ -643,48 +643,80 @@ class _HalamanKuisState extends State<HalamanKuis> {
             ),
             const SizedBox(height: 30), // Spasi di bawah pertanyaan
 
-            // ... (bagian jawaban tetap sama)
-            ...currentQuestion['answers'].map<Widget>((answer) {
-              final isSelected = answer == _selectedAnswer;
-              return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
-                        blurRadius: 3,
-                        offset: const Offset(0, 1),
-                      ),
-                    ],
-                  ),
-                  child: OutlinedButton(
-                    onPressed: () => _answerQuestion(answer),
-                    style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                      side: BorderSide(
-                        color: isSelected ? _getCategoryColor() : Colors.black,
-                        width: isSelected ? 2 : 1,
-                      ),
-                      backgroundColor: isSelected
-                          ? _getCategoryColor().withOpacity(0.1)
-                          : Colors.white.withOpacity(0.9),
-                      shape: RoundedRectangleBorder(
+           
+          // Pilihan jawaban dengan format A, B, C, D
+            Expanded(
+              child: ListView.builder(
+                itemCount: currentQuestion['answers'].length,
+                itemBuilder: (context, index) {
+                  final answer = currentQuestion['answers'][index];
+                  final isSelected = answer == _selectedAnswer;
+                  final optionLabel = String.fromCharCode(65 + index); // A, B, C, D
+                  
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 6.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.grey[300]!,
+                          width: 1,
+                        ),
                         borderRadius: BorderRadius.circular(8),
+                        color: Colors.white,
+                      ),
+                      child: InkWell(
+                        onTap: () => _answerQuestion(answer),
+                        borderRadius: BorderRadius.circular(8),
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Row(
+                            children: [
+                              // Lingkaran dengan huruf A, B, C, D
+                              Container(
+                                width: 32,
+                                height: 32,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: isSelected ? _getCategoryColor() : Colors.grey[400]!,
+                                    width: 2,
+                                  ),
+                                  color: isSelected ? _getCategoryColor() : Colors.transparent,
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    optionLabel,
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      color: isSelected ? Colors.white : Colors.grey[600],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 16),
+                              // Teks jawaban
+                              Expanded(
+                                child: Text(
+                                  answer,
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                    color: isSelected ? _getCategoryColor() : Colors.black87,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
-                    child: Text(
-                      answer,
-                      style: TextStyle(
-                        color: isSelected ? _getCategoryColor() : Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              );
-            }).toList(),
-            const Spacer(),
+                  );
+                },
+              ),
+            ),
+
+            // Tombol next/selesai
             if (_hasAnswered)
               Align(
                 alignment: Alignment.centerRight,
@@ -731,6 +763,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
       ),
     );
   }
+
 
   Widget _buildResultsScreen() {
     double percentage = (_score / _questions.length) * 100;
@@ -916,10 +949,9 @@ class _HalamanKuisState extends State<HalamanKuis> {
   }
 
   String _getGrade(double percentage) {
-    if (percentage >= 90) return 'A+';
-    if (percentage >= 80) return 'A';
-    if (percentage >= 70) return 'B';
-    if (percentage >= 60) return 'C';
+    if (percentage >= 90) return 'A';
+    if (percentage >= 80) return 'B';
+    if (percentage >= 70) return 'C';
     if (percentage >= 50) return 'D';
     return 'E';
   }

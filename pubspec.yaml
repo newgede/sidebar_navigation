@@ -81,6 +81,12 @@ flutter:
     - assets/images/Durian.jpg
     - assets/images/soursop.jpg
     - assets/images/mangosteen.jpg
+    - assets/images/orang tua.jpg
+    - assets/images/bird.jpg
+    - assets/images/deer.jpg
+    - assets/images/banana.jpg
+    - assets/images/apple.jpg
+    - assets/images/cow.jpg
    #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
