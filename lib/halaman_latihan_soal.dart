@@ -1,5 +1,5 @@
-import 'package:aplikasi_belajar_bahasa/custom_bottom_navbar.dart';
-import 'package:aplikasi_belajar_bahasa/halamanutama.dart';
+import 'package:flutter_bahasa_inggris_1/custom_button_navbar.dart';
+import 'package:flutter_bahasa_inggris_1/halaman_utama.dart';
 import 'package:flutter/material.dart';
 
 class HalamanLatihanSoal extends StatefulWidget {
@@ -19,61 +19,61 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
       'question': 'What is this?',
       'options': ['Elephant', 'Banana', 'Grape', 'Yellow'],
       'answerIndex': 1,
-      'image': 'assets/images/banana.png',
+      'image': 'assets/images/banana.jpg',
     },
      {
       'question': 'What is this?',
       'options': ['Nose', 'Mouth', 'Eyebrow', 'Goat'],
       'answerIndex': 1,
-      'image': 'assets/images/mouth.png',
+      'image': 'assets/images/mouth.jpg',
     },
      {
       'question': 'What is this?',
       'options': ['Lung', 'Mouth', 'Eyebrow', 'Soursop'],
       'answerIndex': 0,
-      'image': 'assets/images/lung.png',
+      'image': 'assets/images/lung.jpg',
     },
      {
       'question': 'What is this?',
-      'options': ['Nose', 'Mouth', 'Eyebrow', 'Goat'],
+      'options': ['Nose', 'Mouth', 'Eyebrow', 'Lily'],
       'answerIndex': 3,
-      'image': 'assets/images/goat.png',
+      'image': 'assets/images/lily.jpg',
     },
      {
       'question': 'What is this?',
       'options': ['Lotus', 'Mouse', 'Grape', 'Lily'],
       'answerIndex': 0,
-      'image': 'assets/images/lotus.png',
+      'image': 'assets/images/lotus.jpg',
     },
      {
       'question': 'What is this?',
       'options': ['Kidney', 'Mouth', 'Lung', 'Nose'],
       'answerIndex': 0,
-      'image': 'assets/images/kidney.png',
+      'image': 'assets/images/kidney.jpg',
     },
      {
       'question': 'What is this?',
       'options': ['Door', 'Goat', 'Mouse', 'Dog'],
       'answerIndex': 3,
-      'image': 'assets/images/dog.png',
+      'image': 'assets/images/dog.jpg',
     },
      {
       'question': 'What is this?',
-      'options': ['Chair', 'Mouth', 'Dog', 'Goat'],
+      'options': ['Durian', 'Mouth', 'Dog', 'Goat'],
       'answerIndex': 0,
-      'image': 'assets/images/chair.png',
+      'image': 'assets/images/Durian.jpg',
     },
      {
       'question': 'What is this?',
       'options': ['Heart', 'Mouth', 'Kidney', 'Goat'],
       'answerIndex': 0,
-      'image': 'assets/images/heart.png',
+      'image': 'assets/images/heart.jpg',
     },
       {
       'question': 'What is this?',
       'options': ['Tiger', 'Goat', 'Mouse', 'Cow'],
       'answerIndex': 3,
-      'image': 'assets/images/cow.png',
+      'image': 'assets/images/cow.jpg',
      } 
 
   ];
@@ -245,7 +245,7 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
       child: Align(
         alignment: Alignment.centerLeft,
         child: Text(
-          '${String.fromCharCode(65 + index)}. $text', // Menampilkan A. B. C. D.
+          '${String.fromCharCode(65 + index)}. $text', 
           style: TextStyle(
             color: buttonColor != null ? Colors.white : Colors.black,
           ),
