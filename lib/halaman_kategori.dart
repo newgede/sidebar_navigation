@@ -29,6 +29,7 @@ class HalamanKategori extends StatelessWidget {
       appBar: AppBar(
         title: Text('Kategori Kosa Kata'),
         backgroundColor: Colors.blue,
+        foregroundColor: Colors.black //warna kategori dan icon
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),

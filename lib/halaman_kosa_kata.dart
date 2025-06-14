@@ -169,14 +169,14 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
     {
       'kata': 'Bougainvillea',
       'arti': 'Bougenville',
-      'ejaan': 'jaz-min',
+      'ejaan': 'bou-gen-vil-lea',
       'kategori': 'KosaKata Bunga',
       'gambar': 'assets/images/bougainvillea.jpg',
     },
     {
-      'kata': 'Sun',
-      'arti': 'Matahari',
-      'ejaan': 'san',
+      'kata': 'Sunflower',
+      'arti': 'Bunga Matahari',
+      'ejaan': 'san-flau-er',
       'kategori': 'KosaKata Bunga',
       'gambar': 'assets/images/sun.jpg',
     },
@@ -334,11 +334,11 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
     final screenHeight = screenSize.height;
     final isTablet = screenWidth > 600;
 
-    // Responsive sizes - dikurangi untuk memastikan semua konten terlihat
+    // Responsive sizes untuk memastikan semua konten terlihat
     final imageSize = isTablet ? screenWidth * 0.25 : screenWidth * 0.35;
     final titleFontSize = isTablet ? 32.0 : 24.0;
     final pronunciationFontSize = isTablet ? 18.0 : 16.0;
-    final meaningFontSize = isTablet ? 32.0 : 28.0; // Diperbesar dari 24.0/20.0
+    final meaningFontSize = isTablet ? 32.0 : 28.0;
     final cardMargin = isTablet ? 16.0 : 12.0;
     final cardPadding = isTablet ? 20.0 : 16.0;
 
@@ -347,6 +347,7 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
         appBar: AppBar(
           title: Text('${widget.kategori}'),
           backgroundColor: Colors.blue,
+          foregroundColor: Colors.black,
         ),
         body: Center(child: Text('Tidak ada data untuk kategori ini.')),
       );
@@ -362,6 +363,7 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
         ),
         backgroundColor: Colors.blue,
         centerTitle: true,
+        foregroundColor: Colors.black,
         actions: [
           Container(
             padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
@@ -396,7 +398,7 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Arti (Bahasa Indonesia) - tanpa bundaran hijau, ukuran font diperbesar
+                        // Arti (Bahasa Indonesia) ukuran font diperbesar
                         Flexible(
                           flex: 1,
                           child: FittedBox(
@@ -415,7 +417,7 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
 
                         SizedBox(height: isTablet ? 16 : 12),
 
-                        // Gambar - Ukuran dikurangi
+                        // Ukuran gambar dikurangi
                         Flexible(
                           flex: 4,
                           child: Container(
@@ -431,7 +433,7 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
                               borderRadius: BorderRadius.circular(15),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.grey.withOpacity(0.3),
+                                  color: Colors.grey,
                                   spreadRadius: 2,
                                   blurRadius: 5,
                                   offset: Offset(0, 3),
@@ -449,7 +451,7 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
                                     child: Icon(
                                       Icons.image_not_supported,
                                       size: imageSize * 0.25,
-                                      color: Colors.grey[600],
+                                      color: Colors.grey,
                                     ),
                                   );
                                 },
@@ -496,7 +498,7 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
                                 '/${currentWord['ejaan']}/',
                                 style: TextStyle(
                                   fontSize: pronunciationFontSize,
-                                  color: Colors.blue[700],
+                                  color: Colors.blue[800],
                                   fontStyle: FontStyle.italic,
                                 ),
                                 textAlign: TextAlign.center,
@@ -527,7 +529,7 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
                         shape: BoxShape.circle,
                         color: currentIndex == index
                             ? Colors.blue[600]
-                            : Colors.grey[300],
+                            : Colors.grey,
                       ),
                     );
                   }),
@@ -555,7 +557,7 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
                       ),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.grey[100],
-                        foregroundColor: Colors.grey[700],
+                        foregroundColor: Colors.grey,
                         padding: EdgeInsets.symmetric(
                             horizontal: isTablet ? 24 : 20,
                             vertical: isTablet ? 16 : 12),
