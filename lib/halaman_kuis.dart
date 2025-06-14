@@ -69,69 +69,79 @@ class _HalamanKuisState extends State<HalamanKuis> {
       },
     ],
     'Medium': [
-      {
-        'questionText': 'Susunlah kata "M-L-O-N-E-E-R-A-W-T" ini agar menjadi sebuah kata!',
-        'answers': ['Metermalon', 'Melonwater', 'Watermelon', 'Lomanmeter'],
-        'correctAnswer': 'Watermelon',
-        'type': 'text_options'
-      },
-      {
-        'questionText': 'Susunlah kata "A-R-G-C-I-L" ini agar menjadi sebuah kata!',
-        'answers': ['Garlic', 'Cirgal', 'Cragil', ''],
-        'correctAnswer': 'Garlic',
-        'type': 'text_options'
-      },
-      {
-        'questionText': 'Susunlah kata "S-W-R-R-A-T-Y-E-B-R" ini agar menjadi sebuah kata!',
-        'answers': ['Apple', 'Grape', 'Cherry', 'Strawberry'],
-        'correctAnswer': 'Strawberry',
-        'type': 'text_options'
-      },
-      {
-        'questionText': 'Susunlah kata "  C-O-O-C-E-I-L-D-R" ini agar menjadi sebuah kata!',
-        'answers': ['Lizard', 'Crocodile', 'Lion', 'Crocodeli'],
-        'correctAnswer': 'Crocodile',
-        'type': 'text_options'
-      },
-      {
-        'questionText': 'Apa arti dari kata "I-G-R-T-E"?',
-        'answers': ['Girte', 'Grite', 'Tiger', 'Trige'],
-        'correctAnswer': 'Tiger',
-        'type': 'text_options'
-      },
-    ],
+    {
+      'questionText': 'Apa arti dari kata "Tiger" dalam bahasa Indonesia?',
+      'answers': ['Singa', 'Harimau', 'Macan', 'Kucing'],
+      'correctAnswer': 'Harimau',
+      'type': 'text_options'
+    },
+    {
+      'questionText': 'Bagaimana cara pengucapan kata "Heart"?',
+      'answers': ['härt', 'he-art', 'har-ti', 'hert'],
+      'correctAnswer': 'härt',
+      'type': 'text_options'
+    },
+    {
+      'questionText': 'Manakah yang merupakan nama bunga dalam bahasa Inggris?',
+      'answers': ['Sapodilla', 'Jasmine', 'Durian', 'Kidney'],
+      'correctAnswer': 'Jasmine',
+      'type': 'text_options'
+    },
+    {
+      'questionText': 'Apa arti dari kata "Lung" dalam bahasa Indonesia?',
+      'answers': ['Jantung', 'Ginjal', 'Paru-Paru', 'Otak'],
+      'correctAnswer': 'Paru-Paru',
+      'type': 'text_options'
+    },
+    {
+      'questionText': 'Bagaimana pengucapan kata "Mangosteen"?',
+      'answers': ['mang-go-stin', 'mang-ge-stin', 'man-go-sten', 'mango-steen'],
+      'correctAnswer': 'mang-ge-stin',
+      'type': 'text_options'
+    },
+  ],
     'Hard': [
-      {
-        'questionText': 'Susunlah kata "M-L-O-N-E-E-R-A-W-T" ini agar menjadi sebuah kata!',
-        'answers': ['Cucumber', 'Onion', 'Watermelon', 'Lychee'],
-        'correctAnswer': 'Watermelon',
-        'type': 'text_options'
-      },
-      {
-        'questionText': 'Susunlah kata "A-R-G-C-I-L" ini agar menjadi sebuah kata!',
-        'answers': ['Garlic', 'Eggplant', 'Carrot', 'Broccoli'],
-        'correctAnswer': 'Garlic',
-        'type': 'text_options'
-      },
-      {
-        'questionText': 'Susunlah kata "S-W-R-R-A-T-Y-E-B-R" ini agar menjadi sebuah kata!',
-        'answers': ['Apple', 'Grape', 'Cherry', 'Strawberry'],
-        'correctAnswer': 'Strawberry',
-        'type': 'text_options'
-      },
-      {
-        'questionText': 'Susunlah kata "  C-O-O-C-E-I-L-D-R" ini agar menjadi sebuah kata!',
-        'answers': ['Lizard', 'Crocodile', 'Lion', 'Crocodeli'],
-        'correctAnswer': 'Crocodile',
-        'type': 'text_options'
-      },
-      {
-        'questionText': 'Apa arti dari kata "I-G-R-T-E"?',
-        'answers': ['Girte', 'Grite', 'Tiger', 'Trige'],
-        'correctAnswer': 'Tiger',
-        'type': 'text_options'
-      },
-    ],
+    {
+      'questionText': 'Manakah pasangan kata dan arti yang BENAR?',
+      'answers': [
+        'Sapodilla - Sirsak', 
+        'Soursop - Sirsak', 
+        'Lotus - Lavender', 
+        'Tulip - Teratai'
+      ],
+      'correctAnswer': 'Soursop - Sirsak',
+      'type': 'text_options'
+    },
+    {
+      'questionText': 'Dari kata-kata berikut, manakah yang termasuk kategori "Organ Tubuh"?',
+      'answers': ['Lily', 'Chicken', 'Brain', 'Banana'],
+      'correctAnswer': 'Brain',
+      'type': 'text_options'
+    },
+    {
+      'questionText': 'Bagaimana pengucapan yang BENAR untuk kata "Sapodilla"?',
+      'answers': ['sa-po-di-la', 'sa-po-dil-la', 'sapo-dilla', 'sa-podilla'],
+      'correctAnswer': 'sa-po-di-la',
+      'type': 'text_options'
+    },
+    {
+      'questionText': 'Kelompokkan dengan benar: Dog, Cat, Tiger, Chicken termasuk kategori?',
+      'answers': [
+        'KosaKata Buah', 
+        'KosaKata Hewan', 
+        'KosaKata Bunga', 
+        'KosaKata Organ Tubuh'
+      ],
+      'correctAnswer': 'KosaKata Hewan',
+      'type': 'text_options'
+    },
+    {
+      'questionText': 'Manakah urutan pengucapan yang BENAR untuk "Lavender"?',
+      'answers': ['la-ven-der', 'lav-en-der', 'la-vender', 'laven-der'],
+      'correctAnswer': 'la-ven-der',
+      'type': 'text_options'
+    },
+   ],
   };
 
   List<Map<String, dynamic>> _questions = [];
@@ -193,19 +203,19 @@ class _HalamanKuisState extends State<HalamanKuis> {
     });
   }
 
-  void _resetQuiz() {
-    setState(() {
-      _showWelcome = true;
-      _categorySelected = false;
-      _selectedCategory = null;
-      _questionIndex = 0;
-      _score = 0;
-      _quizFinished = false;
-      _selectedAnswer = null;
-      _hasAnswered = false;
-      _questions = [];
-    });
-  }
+  void _backToCategory() {
+  setState(() {
+    _categorySelected = false;
+    _selectedCategory = null;
+    _questionIndex = 0;
+    _score = 0;
+    _quizFinished = false;
+    _selectedAnswer = null;
+    _hasAnswered = false;
+    _questions = [];
+   });
+}
+
 
   void _backToWelcome() {
     setState(() {
@@ -1019,7 +1029,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
                     ],
                   ),
                   child: ElevatedButton.icon(
-                    onPressed: _resetQuiz,
+                    onPressed: _backToCategory,
                     icon: const Icon(Icons.home),
                     label: const Text('Pilih Level'),
                     style: ElevatedButton.styleFrom(
