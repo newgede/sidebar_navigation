@@ -10,7 +10,7 @@ class HalamanKosaKata extends StatefulWidget {
 
 class _HalamanKosaKataState extends State<HalamanKosaKata> {
   int currentIndex = 0;
-  
+
   List<Map<String, String>> semuaKosaKata = [
     {
       'kata': 'Dog',
@@ -18,6 +18,20 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
       'ejaan': 'dog',
       'kategori': 'KosaKata Hewan',
       'gambar': 'assets/images/dog.jpg',
+    },
+    {
+      'kata': 'Rabbit',
+      'arti': 'Kelinci',
+      'ejaan': 're-bit',
+      'kategori': 'KosaKata Hewan',
+      'gambar': 'assets/images/rabbit.jpg',
+    },
+    {
+      'kata': 'Zebra',
+      'arti': 'Zebra',
+      'ejaan': 'ze-bra',
+      'kategori': 'KosaKata Hewan',
+      'gambar': 'assets/images/zebra.jpg',
     },
     {
       'kata': 'Cat',
@@ -32,6 +46,13 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
       'ejaan': 'kau',
       'kategori': 'KosaKata Hewan',
       'gambar': 'assets/images/cow.jpg',
+    },
+    {
+      'kata': 'Crocodile',
+      'arti': 'Buaya',
+      'ejaan': 'kro-ko-dail',
+      'kategori': 'KosaKata Hewan',
+      'gambar': 'assets/images/crocodile.jpg',
     },
     {
       'kata': 'Bird',
@@ -62,6 +83,13 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
       'gambar': 'assets/images/tiger.jpg',
     },
     {
+      'kata': 'Kiwi',
+      'arti': 'Kiwi',
+      'ejaan': 'ki-wi',
+      'kategori': 'KosaKata Buah',
+      'gambar': 'assets/images/kiwi.jpg',
+    },
+    {
       'kata': 'Durian',
       'arti': 'Durian',
       'ejaan': 'du-ri-an',
@@ -81,6 +109,27 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
       'ejaan': 'ap-pel',
       'kategori': 'KosaKata Buah',
       'gambar': 'assets/images/apple.jpg',
+    },
+    {
+      'kata': 'Melon',
+      'arti': 'Melon',
+      'ejaan': 'me-lon',
+      'kategori': 'KosaKata Buah',
+      'gambar': 'assets/images/melon.jpg',
+    },
+    {
+      'kata': 'Strawberry',
+      'arti': 'Stroberi',
+      'ejaan': 'stro-ber-ri',
+      'kategori': 'KosaKata Buah',
+      'gambar': 'assets/images/strawberry.jpg',
+    },
+    {
+      'kata': 'Rambutan',
+      'arti': 'Rambutan',
+      'ejaan': 'ram-bu-tan',
+      'kategori': 'KosaKata Buah',
+      'gambar': 'assets/images/rambutan.jpg',
     },
     {
       'kata': 'Banana',
@@ -111,6 +160,27 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
       'gambar': 'assets/images/jasmine.jpg',
     },
     {
+      'kata': 'Rose',
+      'arti': 'Mawar',
+      'ejaan': 'rous',
+      'kategori': 'KosaKata Bunga',
+      'gambar': 'assets/images/rose.jpg',
+    },
+    {
+      'kata': 'Bougainvillea',
+      'arti': 'Bougenville',
+      'ejaan': 'jaz-min',
+      'kategori': 'KosaKata Bunga',
+      'gambar': 'assets/images/bougainvillea.jpg',
+    },
+    {
+      'kata': 'Sun',
+      'arti': 'Matahari',
+      'ejaan': 'san',
+      'kategori': 'KosaKata Bunga',
+      'gambar': 'assets/images/sun.jpg',
+    },
+    {
       'kata': 'Lavender',
       'arti': 'Lavender',
       'ejaan': 'la-ven-der',
@@ -118,11 +188,25 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
       'gambar': 'assets/images/lavender.jpg',
     },
     {
+      'kata': 'Orchid',
+      'arti': 'Anggrek',
+      'ejaan': 'or-kid',
+      'kategori': 'KosaKata Bunga',
+      'gambar': 'assets/images/orchid.jpg',
+    },
+    {
       'kata': 'Lily',
       'arti': 'lili',
       'ejaan': 'li-li',
       'kategori': 'KosaKata Bunga',
       'gambar': 'assets/images/lily.jpg',
+    },
+    {
+      'kata': 'Frangipani',
+      'arti': 'Kamboja',
+      'ejaan': 'fran-ji-pa-ni',
+      'kategori': 'KosaKata Bunga',
+      'gambar': 'assets/images/frangipani.jpg',
     },
     {
       'kata': 'Tulip',
@@ -146,6 +230,41 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
       'gambar': 'assets/images/heart.jpg',
     },
     {
+      'kata': 'Liver',
+      'arti': 'Hati',
+      'ejaan': 'li-ver',
+      'kategori': 'KosaKata Organ Tubuh',
+      'gambar': 'assets/images/liver.jpg',
+    },
+    {
+      'kata': 'Ears',
+      'arti': 'Telinga',
+      'ejaan': 'iers',
+      'kategori': 'KosaKata Organ Tubuh',
+      'gambar': 'assets/images/ears.jpg',
+    },
+    {
+      'kata': 'Eyes',
+      'arti': 'Mata',
+      'ejaan': 'ais',
+      'kategori': 'KosaKata Organ Tubuh',
+      'gambar': 'assets/images/eyes.jpg',
+    },
+    {
+      'kata': 'Stomach',
+      'arti': 'Lambung',
+      'ejaan': 'sta-mek',
+      'kategori': 'KosaKata Organ Tubuh',
+      'gambar': 'assets/images/stomach.jpg',
+    },
+    {
+      'kata': 'Intestines',
+      'arti': 'Usus',
+      'ejaan': 'in-tes-tins',
+      'kategori': 'KosaKata Organ Tubuh',
+      'gambar': 'assets/images/intestines.jpg',
+    },
+    {
       'kata': 'Kidney',
       'arti': 'Ginjal',
       'ejaan': 'kid-ni',
@@ -166,13 +285,20 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
       'kategori': 'KosaKata Organ Tubuh',
       'gambar': 'assets/images/brain.jpg',
     },
+    {
+      'kata': 'Nose',
+      'arti': 'Hidung',
+      'ejaan': 'nous',
+      'kategori': 'KosaKata Organ Tubuh',
+      'gambar': 'assets/images/nose.jpg',
+    },
   ];
 
   void nextWord() {
     final daftarTampil = semuaKosaKata
         .where((item) => item['kategori'] == widget.kategori.trim())
         .toList();
-    
+
     setState(() {
       if (currentIndex < daftarTampil.length - 1) {
         currentIndex++;
@@ -186,7 +312,7 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
     final daftarTampil = semuaKosaKata
         .where((item) => item['kategori'] == widget.kategori.trim())
         .toList();
-    
+
     setState(() {
       if (currentIndex > 0) {
         currentIndex--;
@@ -207,14 +333,12 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
     final screenWidth = screenSize.width;
     final screenHeight = screenSize.height;
     final isTablet = screenWidth > 600;
-    
-    // Responsive sizes untuk memastikan semua konten terlihat
-    final imageSize = isTablet 
-        ? screenWidth * 0.25 
-        : screenWidth * 0.35;
+
+    // Responsive sizes - dikurangi untuk memastikan semua konten terlihat
+    final imageSize = isTablet ? screenWidth * 0.25 : screenWidth * 0.35;
     final titleFontSize = isTablet ? 32.0 : 24.0;
     final pronunciationFontSize = isTablet ? 18.0 : 16.0;
-    final meaningFontSize = isTablet ? 24.0 : 20.0;
+    final meaningFontSize = isTablet ? 32.0 : 28.0; // Diperbesar dari 24.0/20.0
     final cardMargin = isTablet ? 16.0 : 12.0;
     final cardPadding = isTablet ? 20.0 : 16.0;
 
@@ -246,10 +370,7 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
                 fit: BoxFit.scaleDown,
                 child: Text(
                   '${currentIndex + 1}/${daftarTampil.length}',
-                  style: TextStyle(
-                    fontSize: 16, 
-                    fontWeight: FontWeight.bold
-                  ),
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               ),
             ),
@@ -259,7 +380,7 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
       body: SafeArea(
         child: Column(
           children: [
-            // Kartu Kosakata 
+            // Kartu Kosakata - Fixed layout tanpa scroll
             Expanded(
               flex: 8,
               child: Container(
@@ -275,7 +396,26 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        // Ukuran Gambar dikurangi
+                        // Arti (Bahasa Indonesia) - tanpa bundaran hijau, ukuran font diperbesar
+                        Flexible(
+                          flex: 1,
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              currentWord['arti'] ?? '',
+                              style: TextStyle(
+                                fontSize: meaningFontSize,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black87,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+
+                        SizedBox(height: isTablet ? 16 : 12),
+
+                        // Gambar - Ukuran dikurangi
                         Flexible(
                           flex: 4,
                           child: Container(
@@ -317,9 +457,9 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
                             ),
                           ),
                         ),
-                        
+
                         SizedBox(height: isTablet ? 20 : 16),
-                        
+
                         // Kata dalam bahasa Inggris
                         Flexible(
                           flex: 1,
@@ -336,17 +476,16 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
                             ),
                           ),
                         ),
-                        
+
                         SizedBox(height: isTablet ? 12 : 8),
-                        
+
                         // Ejaan
                         Flexible(
                           flex: 1,
                           child: Container(
                             padding: EdgeInsets.symmetric(
-                              horizontal: isTablet ? 16 : 12, 
-                              vertical: isTablet ? 8 : 6
-                            ),
+                                horizontal: isTablet ? 16 : 12,
+                                vertical: isTablet ? 8 : 6),
                             decoration: BoxDecoration(
                               color: Colors.blue[50],
                               borderRadius: BorderRadius.circular(20),
@@ -365,43 +504,13 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
                             ),
                           ),
                         ),
-                        
-                        SizedBox(height: isTablet ? 16 : 12),
-                        
-                        // Arti
-                        Flexible(
-                          flex: 1,
-                          child: Container(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: isTablet ? 20 : 16, 
-                              vertical: isTablet ? 12 : 8
-                            ),
-                            decoration: BoxDecoration(
-                              color: Colors.green[50],
-                              borderRadius: BorderRadius.circular(25),
-                              border: Border.all(color: Colors.green[200]!),
-                            ),
-                            child: FittedBox(
-                              fit: BoxFit.scaleDown,
-                              child: Text(
-                                currentWord['arti'] ?? '',
-                                style: TextStyle(
-                                  fontSize: meaningFontSize,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.green[700],
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ),
-                        ),
                       ],
                     ),
                   ),
                 ),
               ),
             ),
-            
+
             // Indikator titik-titik
             Container(
               padding: EdgeInsets.symmetric(vertical: 8),
@@ -416,8 +525,8 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
                       margin: EdgeInsets.symmetric(horizontal: 3),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: currentIndex == index 
-                            ? Colors.blue[600] 
+                        color: currentIndex == index
+                            ? Colors.blue[600]
                             : Colors.grey[300],
                       ),
                     );
@@ -425,7 +534,7 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
                 ),
               ),
             ),
-            
+
             // Tombol navigasi
             Container(
               padding: EdgeInsets.all(16),
@@ -448,18 +557,17 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
                         backgroundColor: Colors.grey[100],
                         foregroundColor: Colors.grey[700],
                         padding: EdgeInsets.symmetric(
-                          horizontal: isTablet ? 24 : 20, 
-                          vertical: isTablet ? 16 : 12
-                        ),
+                            horizontal: isTablet ? 24 : 20,
+                            vertical: isTablet ? 16 : 12),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25),
                         ),
                       ),
                     ),
                   ),
-                  
+
                   SizedBox(width: 16),
-                  
+
                   // Tombol Next
                   Flexible(
                     child: ElevatedButton.icon(
@@ -476,9 +584,8 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
                         backgroundColor: Colors.blue[600],
                         foregroundColor: Colors.white,
                         padding: EdgeInsets.symmetric(
-                          horizontal: isTablet ? 28 : 24, 
-                          vertical: isTablet ? 16 : 12
-                        ),
+                            horizontal: isTablet ? 28 : 24,
+                            vertical: isTablet ? 16 : 12),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25),
                         ),

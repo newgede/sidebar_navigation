@@ -87,6 +87,24 @@ flutter:
     - assets/images/banana.jpg
     - assets/images/apple.jpg
     - assets/images/cow.jpg
+    - assets/images/bougainvillea.jpg
+    - assets/images/crocodile.jpg
+    - assets/images/ears.jpg
+    - assets/images/eyes.jpg
+    - assets/images/frangipani.jpg
+    - assets/images/intestines.jpg
+    - assets/images/kiwi.jpg
+    - assets/images/melon.jpg
+    - assets/images/nose.jpg
+    - assets/images/orchid.jpg
+    - assets/images/rabbit.jpg
+    - assets/images/rambutan.jpg
+    - assets/images/rose.jpg
+    - assets/images/stomach.jpg
+    - assets/images/strawberry.jpg
+    - assets/images/sun.jpg
+    - assets/images/zebra.jpg
+    - assets/images/liver.jpg
    #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
