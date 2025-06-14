@@ -13,88 +13,123 @@ class _HalamanKuisState extends State<HalamanKuis> {
   final Map<String, List<Map<String, dynamic>>> _allQuestions = {
     'Easy': [
       {
-        'questionText': 'What is the name of the fruit in the picture?',
-        'answers': ['Banana', 'Grape', 'Apple', 'Lychee'],
-        'correctAnswer': 'Banana',
-        'image': 'assets/images/banana.jpg' 
+        'questionText': 'Where is the banana?',
+        'answerImages': [
+          'assets/images/banana.jpg',
+          'assets/images/apple.jpg', 
+          'assets/images/mangosteen.jpg',
+          'assets/images/Durian.jpg'
+        ],
+        'correctAnswer': 'assets/images/banana.jpg',
+        'type': 'image_options' // Menandai bahwa ini soal dengan pilihan gambar
       },
       {
-        'questionText': 'What is the name of the fruit in the picture?',
-        'answers': ['Kiwi', 'Melon', 'Apple', 'Banana'],
-        'correctAnswer': 'Apple',
-        'image': 'assets/images/apple.jpg' 
-      },
-       {
-        'questionText': 'What is the name of the Animal in the picture?',
-        'answers': ['Cat', 'Dog', 'Bird', 'Lion'],
-        'correctAnswer': 'Bird',
-        'image': 'assets/images/bird.jpg' 
-      },
-      {
-        'questionText': 'What is the name of the Animal in the picture?',
-        'answers': ['Crocodile', 'Squirrel', 'Deer', 'Bear'],
-        'correctAnswer': 'Deer',
-        'image': 'assets/images/deer.jpg' 
+        'questionText': 'Where is the apple?',
+        'answerImages': [
+          'assets/images/mangosteen.jpg',
+          'assets/images/Durian.jpg',
+          'assets/images/banana.jpg', 
+          'assets/images/apple.jpg'
+        ],
+        'correctAnswer': 'assets/images/apple.jpg',
+        'type': 'image_options'
       },
       {
-        'questionText': 'What is the name of the Animal in the picture?',
-        'answers': ['Pig', 'Cow', 'Chicken', 'Duck'],
-        'correctAnswer': 'Cow',
-        'image': 'assets/images/cow.jpg' 
+        'questionText': 'Where is the bird?',
+        'answerImages': [
+          'assets/images/cow.jpg',
+          'assets/images/deer.jpg',
+          'assets/images/bird.jpg',
+          'assets/images/chicken.jpg'
+        ],
+        'correctAnswer': 'assets/images/bird.jpg',
+        'type': 'image_options'
+      },
+      {
+        'questionText': 'Where is the deer?',
+        'answerImages': [
+          'assets/images/cat.jpg',
+          'assets/images/bird.jpg',
+          'assets/images/cow.jpg',
+          'assets/images/deer.jpg'
+        ],
+        'correctAnswer': 'assets/images/deer.jpg',
+        'type': 'image_options'
+      },
+      {
+        'questionText': 'Where is the cow?',
+        'answerImages': [
+          'assets/images/tiger.jpg',
+          'assets/images/cow.jpg',
+          'assets/images/dog.jpg',
+          'assets/images/bird.jpg'
+        ],
+        'correctAnswer': 'assets/images/cow.jpg',
+        'type': 'image_options'
       },
     ],
     'Medium': [
       {
         'questionText': 'Susunlah kata "M-L-O-N-E-E-R-A-W-T" ini agar menjadi sebuah kata!',
         'answers': ['Metermalon', 'Melonwater', 'Watermelon', 'Lomanmeter'],
-        'correctAnswer': 'Watermelon'
+        'correctAnswer': 'Watermelon',
+        'type': 'text_options'
       },
       {
         'questionText': 'Susunlah kata "A-R-G-C-I-L" ini agar menjadi sebuah kata!',
         'answers': ['Garlic', 'Cirgal', 'Cragil', ''],
-        'correctAnswer': 'Garlic'
+        'correctAnswer': 'Garlic',
+        'type': 'text_options'
       },
       {
         'questionText': 'Susunlah kata "S-W-R-R-A-T-Y-E-B-R" ini agar menjadi sebuah kata!',
         'answers': ['Apple', 'Grape', 'Cherry', 'Strawberry'],
-        'correctAnswer': 'Strawberry'
+        'correctAnswer': 'Strawberry',
+        'type': 'text_options'
       },
       {
         'questionText': 'Susunlah kata "  C-O-O-C-E-I-L-D-R" ini agar menjadi sebuah kata!',
         'answers': ['Lizard', 'Crocodile', 'Lion', 'Crocodeli'],
-        'correctAnswer': 'Crocodile'
+        'correctAnswer': 'Crocodile',
+        'type': 'text_options'
       },
       {
         'questionText': 'Apa arti dari kata "I-G-R-T-E"?',
         'answers': ['Girte', 'Grite', 'Tiger', 'Trige'],
-        'correctAnswer': 'Tiger'
+        'correctAnswer': 'Tiger',
+        'type': 'text_options'
       },
     ],
     'Hard': [
       {
         'questionText': 'Susunlah kata "M-L-O-N-E-E-R-A-W-T" ini agar menjadi sebuah kata!',
         'answers': ['Cucumber', 'Onion', 'Watermelon', 'Lychee'],
-        'correctAnswer': 'Watermelon'
+        'correctAnswer': 'Watermelon',
+        'type': 'text_options'
       },
       {
         'questionText': 'Susunlah kata "A-R-G-C-I-L" ini agar menjadi sebuah kata!',
         'answers': ['Garlic', 'Eggplant', 'Carrot', 'Broccoli'],
-        'correctAnswer': 'Garlic'
+        'correctAnswer': 'Garlic',
+        'type': 'text_options'
       },
       {
         'questionText': 'Susunlah kata "S-W-R-R-A-T-Y-E-B-R" ini agar menjadi sebuah kata!',
         'answers': ['Apple', 'Grape', 'Cherry', 'Strawberry'],
-        'correctAnswer': 'Strawberry'
+        'correctAnswer': 'Strawberry',
+        'type': 'text_options'
       },
       {
         'questionText': 'Susunlah kata "  C-O-O-C-E-I-L-D-R" ini agar menjadi sebuah kata!',
         'answers': ['Lizard', 'Crocodile', 'Lion', 'Crocodeli'],
-        'correctAnswer': 'Crocodile'
+        'correctAnswer': 'Crocodile',
+        'type': 'text_options'
       },
       {
         'questionText': 'Apa arti dari kata "I-G-R-T-E"?',
         'answers': ['Girte', 'Grite', 'Tiger', 'Trige'],
-        'correctAnswer': 'Tiger'
+        'correctAnswer': 'Tiger',
+        'type': 'text_options'
       },
     ],
   };
@@ -191,7 +226,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
       body: Column(
         children:[
           Container(
-              color: const Color(0xFF2052BD).withOpacity(0.9),
+              color: Colors.blue,
               padding: const EdgeInsets.symmetric(vertical: 16),
               child: SafeArea(
                 child: Row(
@@ -248,7 +283,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            const Color(0xFF2052BD).withOpacity(0.1),
+            Colors.blue,
             Colors.white.withOpacity(0.8),
           ],
         ),
@@ -302,7 +337,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
-                      color: Color(0xFF2052BD),
+                      color: Colors.blue,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -311,10 +346,10 @@ class _HalamanKuisState extends State<HalamanKuis> {
                   Container(
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF2052BD).withOpacity(0.05),
+                      color: Colors.blue,
                       borderRadius: BorderRadius.circular(15),
                       border: Border.all(
-                        color: const Color(0xFF2052BD).withOpacity(0.2),
+                        color: Colors.blue,
                         width: 1,
                       ),
                     ),
@@ -323,7 +358,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFF2052BD),
+                        color:Colors.white,
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -348,7 +383,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
-                    color: const Color(0xFF2052BD).withOpacity(0.3),
+                    color: Colors.blue,
                     blurRadius: 15,
                     offset: const Offset(0, 5),
                   ),
@@ -357,7 +392,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
               child: ElevatedButton(
                 onPressed: _startQuiz,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF2052BD),
+                  backgroundColor: Colors.blue,
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(vertical: 18),
                   shape: RoundedRectangleBorder(
@@ -415,7 +450,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
                   Icon(
                     Icons.quiz,
                     size: 60,
-                    color: Color(0xFF2052BD),
+                    color: Colors.blue,
                   ),
                   SizedBox(height: 15),
                   Text(
@@ -540,7 +575,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
 
   Widget _buildQuestionScreen() {
     final currentQuestion = _questions[_questionIndex];
-    final String? imageUrl = currentQuestion['image']; // Ambil path gambar dari data soal
+    final bool isImageQuestion = currentQuestion['type'] == 'image_options';
 
     return Container(
       decoration: BoxDecoration(
@@ -607,30 +642,12 @@ class _HalamanKuisState extends State<HalamanKuis> {
               ),
             ),
 
-            // **BAGIAN INI YANG DIUBAH UNTUK LAYOUT GAMBAR DAN PERTANYAAN**
-            // Gambar (di tengah)
-            if (imageUrl != null)
-              Center( // Memastikan gambar di tengah
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 10.0), // Mengurangi jarak bawah gambar menjadi 10.0
-                  child: ClipRRect( // Menggunakan ClipRRect untuk sudut membulat
-                    borderRadius: BorderRadius.circular(12), // Sudut membulat
-                    child: Image.asset(
-                      imageUrl,
-                      height: 180, // Sesuaikan tinggi gambar agar terlihat jelas
-                      fit: BoxFit.cover, // Memastikan gambar mengisi area tanpa distorsi
-                    ),
-                  ),
-                ),
-              ),
-
-            // Teks pertanyaan (tanpa boxShadow untuk menghilangkan "border")
+            // Teks pertanyaan
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Colors.white.withOpacity(0.9),
                 borderRadius: BorderRadius.circular(12),
-                // boxShadow telah dihapus/dihilangkan di sini
               ),
               child: Text(
                 currentQuestion['questionText'],
@@ -641,79 +658,13 @@ class _HalamanKuisState extends State<HalamanKuis> {
                 textAlign: TextAlign.center,
               ),
             ),
-            const SizedBox(height: 30), // Spasi di bawah pertanyaan
+            const SizedBox(height: 30),
 
-           
-          // Pilihan jawaban dengan format A, B, C, D
+            // Pilihan jawaban - berbeda untuk soal gambar dan teks
             Expanded(
-              child: ListView.builder(
-                itemCount: currentQuestion['answers'].length,
-                itemBuilder: (context, index) {
-                  final answer = currentQuestion['answers'][index];
-                  final isSelected = answer == _selectedAnswer;
-                  final optionLabel = String.fromCharCode(65 + index); // A, B, C, D
-                  
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 6.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.grey[300]!,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                        color: Colors.white,
-                      ),
-                      child: InkWell(
-                        onTap: () => _answerQuestion(answer),
-                        borderRadius: BorderRadius.circular(8),
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Row(
-                            children: [
-                              // Lingkaran dengan huruf A, B, C, D
-                              Container(
-                                width: 32,
-                                height: 32,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: isSelected ? _getCategoryColor() : Colors.grey[400]!,
-                                    width: 2,
-                                  ),
-                                  color: isSelected ? _getCategoryColor() : Colors.transparent,
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    optionLabel,
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      color: isSelected ? Colors.white : Colors.grey[600],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              const SizedBox(width: 16),
-                              // Teks jawaban
-                              Expanded(
-                                child: Text(
-                                  answer,
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w500,
-                                    color: isSelected ? _getCategoryColor() : Colors.black87,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              ),
+              child: isImageQuestion 
+                ? _buildImageOptions(currentQuestion)
+                : _buildTextOptions(currentQuestion),
             ),
 
             // Tombol next/selesai
@@ -764,6 +715,160 @@ class _HalamanKuisState extends State<HalamanKuis> {
     );
   }
 
+  // Widget untuk pilihan gambar (Easy level)
+  Widget _buildImageOptions(Map<String, dynamic> currentQuestion) {
+    final List<String> answerImages = currentQuestion['answerImages'];
+    
+    return GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 16,
+        mainAxisSpacing: 16,
+        childAspectRatio: 1.0,
+      ),
+      itemCount: answerImages.length,
+      itemBuilder: (context, index) {
+        final imagePath = answerImages[index];
+        final isSelected = imagePath == _selectedAnswer;
+        final optionLabel = String.fromCharCode(65 + index); // A, B, C, D
+        
+        return GestureDetector(
+          onTap: () => _answerQuestion(imagePath),
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: isSelected ? _getCategoryColor() : Colors.grey[300]!,
+                width: isSelected ? 3 : 2,
+              ),
+              borderRadius: BorderRadius.circular(12),
+              color: Colors.white,
+              boxShadow: [
+                if (isSelected)
+                  BoxShadow(
+                    color: _getCategoryColor().withOpacity(0.3),
+                    blurRadius: 8,
+                    offset: const Offset(0, 2),
+                  ),
+              ],
+            ),
+            child: Column(
+              children: [
+                // Label A, B, C, D di pojok kiri atas
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Container(
+                    margin: const EdgeInsets.all(8),
+                    width: 28,
+                    height: 28,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: isSelected ? _getCategoryColor() : Colors.grey[400],
+                    ),
+                    child: Center(
+                      child: Text(
+                        optionLabel,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                // Gambar
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
+                      child: Image.asset(
+                        imagePath,
+                        fit: BoxFit.cover,
+                        width: double.infinity,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  // Widget untuk pilihan teks (Medium & Hard level)
+  Widget _buildTextOptions(Map<String, dynamic> currentQuestion) {
+    return ListView.builder(
+      itemCount: currentQuestion['answers'].length,
+      itemBuilder: (context, index) {
+        final answer = currentQuestion['answers'][index];
+        final isSelected = answer == _selectedAnswer;
+        final optionLabel = String.fromCharCode(65 + index); // A, B, C, D
+        
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 6.0),
+          child: Container(
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.grey[300]!,
+                width: 1,
+              ),
+              borderRadius: BorderRadius.circular(8),
+              color: Colors.white,
+            ),
+            child: InkWell(
+              onTap: () => _answerQuestion(answer),
+              borderRadius: BorderRadius.circular(8),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Row(
+                  children: [
+                    // Lingkaran dengan huruf A, B, C, D
+                    Container(
+                      width: 32,
+                      height: 32,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: isSelected ? _getCategoryColor() : Colors.grey[400]!,
+                          width: 2,
+                        ),
+                        color: isSelected ? _getCategoryColor() : Colors.transparent,
+                      ),
+                      child: Center(
+                        child: Text(
+                          optionLabel,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: isSelected ? Colors.white : Colors.grey[600],
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    // Teks jawaban
+                    Expanded(
+                      child: Text(
+                        answer,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: isSelected ? _getCategoryColor() : Colors.black87,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
 
   Widget _buildResultsScreen() {
     double percentage = (_score / _questions.length) * 100;
@@ -956,3 +1061,4 @@ class _HalamanKuisState extends State<HalamanKuis> {
     return 'E';
   }
 }
+
