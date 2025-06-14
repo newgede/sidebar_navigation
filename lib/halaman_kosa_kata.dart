@@ -9,11 +9,13 @@ class HalamanKosaKata extends StatefulWidget {
 }
 
 class _HalamanKosaKataState extends State<HalamanKosaKata> {
+  int currentIndex = 0;
+  
   List<Map<String, String>> semuaKosaKata = [
     {
       'kata': 'Dog',
       'arti': 'Anjing',
-      'ejaan': 'dôg',
+      'ejaan': 'dog',
       'kategori': 'KosaKata Hewan',
       'gambar': 'assets/images/dog.jpg',
     },
@@ -23,6 +25,27 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
       'ejaan': 'kat',
       'kategori': 'KosaKata Hewan',
       'gambar': 'assets/images/cat.jpg',
+    },
+    {
+      'kata': 'Cow',
+      'arti': 'Sapi',
+      'ejaan': 'kau',
+      'kategori': 'KosaKata Hewan',
+      'gambar': 'assets/images/cow.jpg',
+    },
+    {
+      'kata': 'Bird',
+      'arti': 'Burung',
+      'ejaan': 'bi-rd',
+      'kategori': 'KosaKata Hewan',
+      'gambar': 'assets/images/bird.jpg',
+    },
+    {
+      'kata': 'Deer',
+      'arti': 'Rusa',
+      'ejaan': 'dir',
+      'kategori': 'KosaKata Hewan',
+      'gambar': 'assets/images/deer.jpg',
     },
     {
       'kata': 'Chicken',
@@ -51,6 +74,20 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
       'ejaan': 'mang-ge-stin',
       'kategori': 'KosaKata Buah',
       'gambar': 'assets/images/mangosteen.jpg',
+    },
+    {
+      'kata': 'Apple',
+      'arti': 'Apel',
+      'ejaan': 'ap-pel',
+      'kategori': 'KosaKata Buah',
+      'gambar': 'assets/images/apple.jpg',
+    },
+    {
+      'kata': 'Banana',
+      'arti': 'Pisang',
+      'ejaan': 'ba-na-na',
+      'kategori': 'KosaKata Buah',
+      'gambar': 'assets/images/banana.jpg',
     },
     {
       'kata': 'Soursop',
@@ -131,54 +168,329 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
     },
   ];
 
+  void nextWord() {
+    final daftarTampil = semuaKosaKata
+        .where((item) => item['kategori'] == widget.kategori.trim())
+        .toList();
+    
+    setState(() {
+      if (currentIndex < daftarTampil.length - 1) {
+        currentIndex++;
+      } else {
+        currentIndex = 0; // Kembali ke awal
+      }
+    });
+  }
+
+  void previousWord() {
+    final daftarTampil = semuaKosaKata
+        .where((item) => item['kategori'] == widget.kategori.trim())
+        .toList();
+    
+    setState(() {
+      if (currentIndex > 0) {
+        currentIndex--;
+      } else {
+        currentIndex = daftarTampil.length - 1; // Ke akhir
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final daftarTampil = semuaKosaKata
         .where((item) => item['kategori'] == widget.kategori.trim())
         .toList();
 
+    // Mendapatkan ukuran layar
+    final screenSize = MediaQuery.of(context).size;
+    final screenWidth = screenSize.width;
+    final screenHeight = screenSize.height;
+    final isTablet = screenWidth > 600;
+    
+    // Responsive sizes untuk memastikan semua konten terlihat
+    final imageSize = isTablet 
+        ? screenWidth * 0.25 
+        : screenWidth * 0.35;
+    final titleFontSize = isTablet ? 32.0 : 24.0;
+    final pronunciationFontSize = isTablet ? 18.0 : 16.0;
+    final meaningFontSize = isTablet ? 24.0 : 20.0;
+    final cardMargin = isTablet ? 16.0 : 12.0;
+    final cardPadding = isTablet ? 20.0 : 16.0;
+
+    if (daftarTampil.isEmpty) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text('${widget.kategori}'),
+          backgroundColor: Colors.blue,
+        ),
+        body: Center(child: Text('Tidak ada data untuk kategori ini.')),
+      );
+    }
+
+    final currentWord = daftarTampil[currentIndex];
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('${widget.kategori}'),
+        title: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text('${widget.kategori}'),
+        ),
         backgroundColor: Colors.blue,
+        centerTitle: true,
+        actions: [
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+            child: Center(
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  '${currentIndex + 1}/${daftarTampil.length}',
+                  style: TextStyle(
+                    fontSize: 16, 
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
-      body: daftarTampil.isEmpty
-          ? Center(child: Text('Tidak ada data untuk kategori ini.'))
-          : ListView.builder(
-              itemCount: daftarTampil.length,
-              itemBuilder: (context, index) {
-                final item = daftarTampil[index];
-                return Card(
-                  margin: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                  child: ListTile(
-                    leading: Container(
-                      width: 70,
-                      height: 70,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        image: DecorationImage(
-                          image: AssetImage(item['gambar'] ?? ''),
-                          fit: BoxFit.cover, // mengisi penuh
-                          onError: (_, __) {}, // untuk handle error manual
-                        ),
-                      ),
-                    ),
-                    title: Text(
-                      item['kata'] ?? '',
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+      body: SafeArea(
+        child: Column(
+          children: [
+            // Kartu Kosakata 
+            Expanded(
+              flex: 8,
+              child: Container(
+                width: double.infinity,
+                margin: EdgeInsets.all(cardMargin),
+                child: Card(
+                  elevation: 8,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(cardPadding),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Ejaan: ${item['ejaan']}'),
-                        Text('Arti: ${item['arti']}'),
+                        // Ukuran Gambar dikurangi
+                        Flexible(
+                          flex: 4,
+                          child: Container(
+                            width: imageSize,
+                            height: imageSize,
+                            constraints: BoxConstraints(
+                              maxWidth: 200,
+                              maxHeight: 200,
+                              minWidth: 120,
+                              minHeight: 120,
+                            ),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.3),
+                                  spreadRadius: 2,
+                                  blurRadius: 5,
+                                  offset: Offset(0, 3),
+                                ),
+                              ],
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(15),
+                              child: Image.asset(
+                                currentWord['gambar'] ?? '',
+                                fit: BoxFit.cover,
+                                errorBuilder: (context, error, stackTrace) {
+                                  return Container(
+                                    color: Colors.grey[300],
+                                    child: Icon(
+                                      Icons.image_not_supported,
+                                      size: imageSize * 0.25,
+                                      color: Colors.grey[600],
+                                    ),
+                                  );
+                                },
+                              ),
+                            ),
+                          ),
+                        ),
+                        
+                        SizedBox(height: isTablet ? 20 : 16),
+                        
+                        // Kata dalam bahasa Inggris
+                        Flexible(
+                          flex: 1,
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              currentWord['kata'] ?? '',
+                              style: TextStyle(
+                                fontSize: titleFontSize,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blue[800],
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        
+                        SizedBox(height: isTablet ? 12 : 8),
+                        
+                        // Ejaan
+                        Flexible(
+                          flex: 1,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: isTablet ? 16 : 12, 
+                              vertical: isTablet ? 8 : 6
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.blue[50],
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                '/${currentWord['ejaan']}/',
+                                style: TextStyle(
+                                  fontSize: pronunciationFontSize,
+                                  color: Colors.blue[700],
+                                  fontStyle: FontStyle.italic,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ),
+                        ),
+                        
+                        SizedBox(height: isTablet ? 16 : 12),
+                        
+                        // Arti
+                        Flexible(
+                          flex: 1,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: isTablet ? 20 : 16, 
+                              vertical: isTablet ? 12 : 8
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.green[50],
+                              borderRadius: BorderRadius.circular(25),
+                              border: Border.all(color: Colors.green[200]!),
+                            ),
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                currentWord['arti'] ?? '',
+                                style: TextStyle(
+                                  fontSize: meaningFontSize,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.green[700],
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
-                );
-              },
+                ),
+              ),
             ),
+            
+            // Indikator titik-titik
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 8),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: List.generate(daftarTampil.length, (index) {
+                    return Container(
+                      width: isTablet ? 10 : 8,
+                      height: isTablet ? 10 : 8,
+                      margin: EdgeInsets.symmetric(horizontal: 3),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: currentIndex == index 
+                            ? Colors.blue[600] 
+                            : Colors.grey[300],
+                      ),
+                    );
+                  }),
+                ),
+              ),
+            ),
+            
+            // Tombol navigasi
+            Container(
+              padding: EdgeInsets.all(16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // Tombol Previous
+                  Flexible(
+                    child: ElevatedButton.icon(
+                      onPressed: previousWord,
+                      icon: Icon(
+                        Icons.arrow_back_ios,
+                        size: isTablet ? 20 : 18,
+                      ),
+                      label: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text('Previous'),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.grey[100],
+                        foregroundColor: Colors.grey[700],
+                        padding: EdgeInsets.symmetric(
+                          horizontal: isTablet ? 24 : 20, 
+                          vertical: isTablet ? 16 : 12
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                      ),
+                    ),
+                  ),
+                  
+                  SizedBox(width: 16),
+                  
+                  // Tombol Next
+                  Flexible(
+                    child: ElevatedButton.icon(
+                      onPressed: nextWord,
+                      icon: Icon(
+                        Icons.arrow_forward_ios,
+                        size: isTablet ? 20 : 18,
+                      ),
+                      label: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Text('Next'),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue[600],
+                        foregroundColor: Colors.white,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: isTablet ? 28 : 24, 
+                          vertical: isTablet ? 16 : 12
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
