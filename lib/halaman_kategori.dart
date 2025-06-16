@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'halaman_kosa_kata.dart';
 
+
 class HalamanKategori extends StatelessWidget {
   HalamanKategori({super.key});
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bahasa_inggris_1/custom_button_navbar.dart';
 
 class HalamanKuis extends StatefulWidget {
   const HalamanKuis({super.key});
@@ -16,7 +15,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
         'questionText': 'Where is the banana?',
         'answerImages': [
           'assets/images/banana.jpg',
-          'assets/images/apple.jpg', 
+          'assets/images/apple.jpg',
           'assets/images/mangosteen.jpg',
           'assets/images/Durian.jpg'
         ],
@@ -28,7 +27,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
         'answerImages': [
           'assets/images/mangosteen.jpg',
           'assets/images/Durian.jpg',
-          'assets/images/banana.jpg', 
+          'assets/images/banana.jpg',
           'assets/images/apple.jpg'
         ],
         'correctAnswer': 'assets/images/apple.jpg',
@@ -69,79 +68,79 @@ class _HalamanKuisState extends State<HalamanKuis> {
       },
     ],
     'Medium': [
-    {
-      'questionText': 'Apa arti dari kata "Tiger" dalam bahasa Indonesia?',
-      'answers': ['Singa', 'Harimau', 'Macan', 'Kucing'],
-      'correctAnswer': 'Harimau',
-      'type': 'text_options'
-    },
-    {
-      'questionText': 'Bagaimana cara pengucapan kata "Heart"?',
-      'answers': ['härt', 'he-art', 'har-ti', 'hert'],
-      'correctAnswer': 'härt',
-      'type': 'text_options'
-    },
-    {
-      'questionText': 'Manakah yang merupakan nama bunga dalam bahasa Inggris?',
-      'answers': ['Sapodilla', 'Jasmine', 'Durian', 'Kidney'],
-      'correctAnswer': 'Jasmine',
-      'type': 'text_options'
-    },
-    {
-      'questionText': 'Apa arti dari kata "Lung" dalam bahasa Indonesia?',
-      'answers': ['Jantung', 'Ginjal', 'Paru-Paru', 'Otak'],
-      'correctAnswer': 'Paru-Paru',
-      'type': 'text_options'
-    },
-    {
-      'questionText': 'Bagaimana pengucapan kata "Mangosteen"?',
-      'answers': ['mang-go-stin', 'mang-ge-stin', 'man-go-sten', 'mango-steen'],
-      'correctAnswer': 'mang-ge-stin',
-      'type': 'text_options'
-    },
-  ],
+      {
+        'questionText': 'Apa arti dari kata "Tiger" dalam bahasa Indonesia?',
+        'answers': ['Singa', 'Harimau', 'Macan', 'Kucing'],
+        'correctAnswer': 'Harimau',
+        'type': 'text_options'
+      },
+      {
+        'questionText': 'Bagaimana cara pengucapan kata "Heart"?',
+        'answers': ['härt', 'he-art', 'har-ti', 'hert'],
+        'correctAnswer': 'härt',
+        'type': 'text_options'
+      },
+      {
+        'questionText': 'Manakah yang merupakan nama bunga dalam bahasa Inggris?',
+        'answers': ['Sapodilla', 'Jasmine', 'Durian', 'Kidney'],
+        'correctAnswer': 'Jasmine',
+        'type': 'text_options'
+      },
+      {
+        'questionText': 'Apa arti dari kata "Lung" dalam bahasa Indonesia?',
+        'answers': ['Jantung', 'Ginjal', 'Paru-Paru', 'Otak'],
+        'correctAnswer': 'Paru-Paru',
+        'type': 'text_options'
+      },
+      {
+        'questionText': 'Bagaimana pengucapan kata "Mangosteen"?',
+        'answers': ['mang-go-stin', 'mang-ge-stin', 'man-go-sten', 'mango-steen'],
+        'correctAnswer': 'mang-ge-stin',
+        'type': 'text_options'
+      },
+    ],
     'Hard': [
-    {
-      'questionText': 'Manakah pasangan kata dan arti yang BENAR?',
-      'answers': [
-        'Sapodilla - Sirsak', 
-        'Soursop - Sirsak', 
-        'Lotus - Lavender', 
-        'Tulip - Teratai'
-      ],
-      'correctAnswer': 'Soursop - Sirsak',
-      'type': 'text_options'
-    },
-    {
-      'questionText': 'Dari kata-kata berikut, manakah yang termasuk kategori "Organ Tubuh"?',
-      'answers': ['Lily', 'Chicken', 'Brain', 'Banana'],
-      'correctAnswer': 'Brain',
-      'type': 'text_options'
-    },
-    {
-      'questionText': 'Bagaimana pengucapan yang BENAR untuk kata "Sapodilla"?',
-      'answers': ['sa-po-di-la', 'sa-po-dil-la', 'sapo-dilla', 'sa-podilla'],
-      'correctAnswer': 'sa-po-di-la',
-      'type': 'text_options'
-    },
-    {
-      'questionText': 'Kelompokkan dengan benar: Dog, Cat, Tiger, Chicken termasuk kategori?',
-      'answers': [
-        'KosaKata Buah', 
-        'KosaKata Hewan', 
-        'KosaKata Bunga', 
-        'KosaKata Organ Tubuh'
-      ],
-      'correctAnswer': 'KosaKata Hewan',
-      'type': 'text_options'
-    },
-    {
-      'questionText': 'Manakah urutan pengucapan yang BENAR untuk "Lavender"?',
-      'answers': ['la-ven-der', 'lav-en-der', 'la-vender', 'laven-der'],
-      'correctAnswer': 'la-ven-der',
-      'type': 'text_options'
-    },
-   ],
+      {
+        'questionText': 'Manakah pasangan kata dan arti yang BENAR?',
+        'answers': [
+          'Sapodilla - Sirsak',
+          'Soursop - Sirsak',
+          'Lotus - Lavender',
+          'Tulip - Teratai'
+        ],
+        'correctAnswer': 'Soursop - Sirsak',
+        'type': 'text_options'
+      },
+      {
+        'questionText': 'Dari kata-kata berikut, manakah yang termasuk kategori "Organ Tubuh"?',
+        'answers': ['Lily', 'Chicken', 'Brain', 'Banana'],
+        'correctAnswer': 'Brain',
+        'type': 'text_options'
+      },
+      {
+        'questionText': 'Bagaimana pengucapan yang BENAR untuk kata "Sapodilla"?',
+        'answers': ['sa-po-di-la', 'sa-po-dil-la', 'sapo-dilla', 'sa-podilla'],
+        'correctAnswer': 'sa-po-di-la',
+        'type': 'text_options'
+      },
+      {
+        'questionText': 'Kelompokkan dengan benar: Dog, Cat, Tiger, Chicken termasuk kategori?',
+        'answers': [
+          'KosaKata Buah',
+          'KosaKata Hewan',
+          'KosaKata Bunga',
+          'KosaKata Organ Tubuh'
+        ],
+        'correctAnswer': 'KosaKata Hewan',
+        'type': 'text_options'
+      },
+      {
+        'questionText': 'Manakah urutan pengucapan yang BENAR untuk "Lavender"?',
+        'answers': ['la-ven-der', 'lav-en-der', 'la-vender', 'laven-der'],
+        'correctAnswer': 'la-ven-der',
+        'type': 'text_options'
+      },
+    ],
   };
 
   List<Map<String, dynamic>> _questions = [];
@@ -204,18 +203,17 @@ class _HalamanKuisState extends State<HalamanKuis> {
   }
 
   void _backToCategory() {
-  setState(() {
-    _categorySelected = false;
-    _selectedCategory = null;
-    _questionIndex = 0;
-    _score = 0;
-    _quizFinished = false;
-    _selectedAnswer = null;
-    _hasAnswered = false;
-    _questions = [];
-   });
-}
-
+    setState(() {
+      _categorySelected = false;
+      _selectedCategory = null;
+      _questionIndex = 0;
+      _score = 0;
+      _quizFinished = false;
+      _selectedAnswer = null;
+      _hasAnswered = false;
+      _questions = [];
+    });
+  }
 
   void _backToWelcome() {
     setState(() {
@@ -234,60 +232,59 @@ class _HalamanKuisState extends State<HalamanKuis> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children:[
+        children: [
           Container(
-              color: Colors.blue,
-              padding: const EdgeInsets.symmetric(vertical: 16),
-              child: SafeArea(
-                child: Row(
-                  children: [
-                    // Back button - hanya tampil jika tidak sedang dalam kuis
-                    if (!_categorySelected && !_showWelcome)
-                      IconButton(
-                        icon: const Icon(Icons.arrow_back, color: Colors.white),
-                        onPressed: _backToWelcome,
-                      )
-                    else
-                      const SizedBox(width: 48),
-                    Expanded(
-                      child: Text(
-                        _showWelcome
-                            ? 'Quiz Bahasa Inggris'
-                            : _categorySelected
-                                ? 'Quiz - $_selectedCategory'
-                                : 'Pilih Tingkat Kesulitan',
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                          ),
+            color: Colors.blue,
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            child: SafeArea(
+              child: Row(
+                children: [
+                  // Back button - hanya tampil jika tidak sedang dalam kuis
+                  if (!_categorySelected && !_showWelcome)
+                    IconButton(
+                      icon: const Icon(Icons.arrow_back, color: Colors.white),
+                      onPressed: _backToWelcome,
+                    )
+                  else
+                    const SizedBox(width: 48),
+                  Expanded(
+                    child: Text(
+                      _showWelcome
+                          ? 'Quiz Bahasa Inggris'
+                          : _categorySelected
+                          ? 'Quiz - $_selectedCategory'
+                          : 'Pilih Tingkat Kesulitan',
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
                     ),
-                    const SizedBox(width: 48), // Placeholder
-                  ],
-                ),
+                  ),
+                  const SizedBox(width: 48), // Placeholder
+                ],
               ),
             ),
-            // Konten Kuis
-            Expanded(
-              child: _showWelcome
-                  ? _buildWelcomeScreen()
-                  : !_categorySelected
-                      ? _buildCategorySelectionScreen()
-                      : _quizFinished
-                          ? _buildResultsScreen()
-                          : _buildQuestionScreen(),
-            ),
-            ],
-        ),
+          ),
+          // Konten Kuis
+          Expanded(
+            child: _showWelcome
+                ? _buildWelcomeScreen()
+                : !_categorySelected
+                ? _buildCategorySelectionScreen()
+                : _quizFinished
+                ? _buildResultsScreen()
+                : _buildQuestionScreen(),
+          ),
+        ],
+      ),
+   );
+  }
 
-      bottomNavigationBar: const CustomBottomNavBar(currentIndex: 3),
-      );
-     }
-
+  // --- MODIFIED _buildWelcomeScreen() ---
   Widget _buildWelcomeScreen() {
-    return SingleChildScrollView( // Tambahkan SingleChildScrollView di sini
+    return SingleChildScrollView( // Membungkus dengan SingleChildScrollView
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -369,7 +366,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
-                          color:Colors.white,
+                          color: Colors.white,
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -434,85 +431,89 @@ class _HalamanKuisState extends State<HalamanKuis> {
     );
   }
 
+  // --- MODIFIED _buildCategorySelectionScreen() ---
   Widget _buildCategorySelectionScreen() {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.8),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.95),
-                borderRadius: BorderRadius.circular(15),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    blurRadius: 10,
-                    offset: const Offset(0, 4),
-                  ),
-                ],
-              ),
-              child: const Column(
-                children: [
-                  Icon(
-                    Icons.quiz,
-                    size: 60,
-                    color: Colors.blue,
-                  ),
-                  SizedBox(height: 15),
-                  Text(
-                    'Pilih Tingkat Kesulitan',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
+    return SingleChildScrollView( // Membungkus dengan SingleChildScrollView
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white.withOpacity(0.8),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.95),
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.1),
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
                     ),
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Pilih level yang sesuai dengan kemampuan Anda',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey,
+                  ],
+                ),
+                child: const Column(
+                  children: [
+                    Icon(
+                      Icons.quiz,
+                      size: 60,
+                      color: Colors.blue,
                     ),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
+                    SizedBox(height: 15),
+                    Text(
+                      'Pilih Tingkat Kesulitan',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black87,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Pilih level yang sesuai dengan kemampuan Anda',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.grey,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            const SizedBox(height: 40),
-            _buildCategoryButton(
-              'Easy',
-              'Mudah (5 soal)',
-              Colors.green,
-              Icons.sentiment_satisfied,
-            ),
-            const SizedBox(height: 20),
-            _buildCategoryButton(
-              'Medium',
-              'Sedang (5 soal)',
-              Colors.orange,
-              Icons.sentiment_neutral,
-            ),
-            const SizedBox(height: 20),
-            _buildCategoryButton(
-              'Hard',
-              'Sulit (5 soal)',
-              Colors.red,
-              Icons.sentiment_very_dissatisfied,
-            ),
-          ],
+              const SizedBox(height: 40),
+              _buildCategoryButton(
+                'Easy',
+                'Mudah (5 soal)',
+                Colors.green,
+                Icons.sentiment_satisfied,
+              ),
+              const SizedBox(height: 20),
+              _buildCategoryButton(
+                'Medium',
+                'Sedang (5 soal)',
+                Colors.orange,
+                Icons.sentiment_neutral,
+              ),
+              const SizedBox(height: 20),
+              _buildCategoryButton(
+                'Hard',
+                'Sulit (5 soal)',
+                Colors.red,
+                Icons.sentiment_very_dissatisfied,
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 
+  // Widget untuk pilihan kategori (tidak perlu perubahan di sini)
   Widget _buildCategoryButton(String category, String description, Color color, IconData icon) {
     return Container(
       width: double.infinity,
@@ -585,6 +586,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
     );
   }
 
+  // Widget untuk layar pertanyaan (tidak perlu perubahan di sini karena Expanded sudah menangani scrollable)
   Widget _buildQuestionScreen() {
     final currentQuestion = _questions[_questionIndex];
     final bool isImageQuestion = currentQuestion['type'] == 'image_options';
@@ -674,9 +676,9 @@ class _HalamanKuisState extends State<HalamanKuis> {
 
             // Pilihan jawaban - berbeda untuk soal gambar dan teks
             Expanded(
-              child: isImageQuestion 
-                ? _buildImageOptions(currentQuestion)
-                : _buildTextOptions(currentQuestion),
+              child: isImageQuestion
+                  ? _buildImageOptions(currentQuestion)
+                  : _buildTextOptions(currentQuestion),
             ),
 
             // Tombol next/selesai
@@ -696,15 +698,15 @@ class _HalamanKuisState extends State<HalamanKuis> {
                   child: ElevatedButton(
                     onPressed: _questionIndex == _questions.length - 1
                         ? () {
-                            setState(() {
-                              _quizFinished = true;
-                            });
-                          }
+                      setState(() {
+                        _quizFinished = true;
+                      });
+                    }
                         : _goToNextQuestion,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: _getCategoryColor(),
                       padding:
-                          const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18),
                       ),
@@ -730,7 +732,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
   // Widget untuk pilihan gambar (Easy level)
   Widget _buildImageOptions(Map<String, dynamic> currentQuestion) {
     final List<String> answerImages = currentQuestion['answerImages'];
-    
+
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
@@ -743,7 +745,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
         final imagePath = answerImages[index];
         final isSelected = imagePath == _selectedAnswer;
         final optionLabel = String.fromCharCode(65 + index); // A, B, C, D
-        
+
         return GestureDetector(
           onTap: () => _answerQuestion(imagePath),
           child: Container(
@@ -818,7 +820,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
         final answer = currentQuestion['answers'][index];
         final isSelected = answer == _selectedAnswer;
         final optionLabel = String.fromCharCode(65 + index); // A, B, C, D
-        
+
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 6.0),
           child: Container(
@@ -882,187 +884,186 @@ class _HalamanKuisState extends State<HalamanKuis> {
     );
   }
 
- Widget _buildResultsScreen() {
-  double percentage = (_score / _questions.length) * 100;
-  String grade = _getGrade(percentage);
-  int wrongAnswers = _questions.length - _score;
-  int finalScore = _score * 20; // Setiap soal bernilai 20 (untuk 5 soal total 100)
+  // --- MODIFIED _buildResultsScreen() ---
+  Widget _buildResultsScreen() {
+    // double percentage = (_score / _questions.length) * 100; // Tidak digunakan lagi untuk display
+    String grade = _getGrade((_score / _questions.length) * 100); // Grade masih berdasarkan persentase
+    int wrongAnswers = _questions.length - _score;
+    int finalScore = _score * 20; // Setiap soal bernilai 20 (untuk 5 soal total 100)
 
-  return Container(
-    decoration: BoxDecoration(
-      color: Colors.white.withOpacity(0.8),
-    ),
-    child: Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            padding: const EdgeInsets.all(30),
-            decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.95),
-              border: Border.all(color: _getCategoryColor(), width: 2),
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.2),
-                  blurRadius: 15,
-                  offset: const Offset(0, 5),
-                ),
-              ],
-            ),
-            child: Column(
-              children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-                  decoration: BoxDecoration(
-                    color: _getCategoryColor(),
-                    borderRadius: BorderRadius.circular(20),
+    return SingleChildScrollView( // Membungkus dengan SingleChildScrollView
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(30),
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.95),
+                border: Border.all(color: _getCategoryColor(), width: 2),
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    blurRadius: 15,
+                    offset: const Offset(0, 5),
                   ),
-                  child: Text(
-                    _selectedCategory!,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                ],
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: _getCategoryColor(),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Text(
+                      _selectedCategory!,
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 20),
-                const Text(
-                  'HASIL AKHIR',
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black87,
+                  const SizedBox(height: 20),
+                  const Text(
+                    'HASIL AKHIR',
+                    style: TextStyle(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 20),
-                Text(
-                  '$finalScore', // Menampilkan skor dalam skala 100
-                  style: TextStyle(
-                    fontSize: 80,
-                    fontWeight: FontWeight.bold,
-                    color: _getCategoryColor(),
+                  const SizedBox(height: 20),
+                  Text(
+                    '$finalScore', // Menampilkan skor dalam skala 100
+                    style: TextStyle(
+                      fontSize: 80,
+                      fontWeight: FontWeight.bold,
+                      color: _getCategoryColor(),
+                    ),
                   ),
-                ),
-                const SizedBox(height: 5),
-                Text(
-                  'dari 100',
-                  style: const TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.grey,
+                  const SizedBox(height: 5),
+                  const Text( // Diubah agar tidak menampilkan persentase
+                    'dari 100',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 15),
-                Text(
-                  'Jawaban Benar',
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black87,
+                  const SizedBox(height: 15),
+                  Text(
+                    'Jawaban Benar',
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                    ),
                   ),
-                ),
-                const SizedBox(height: 20),
+                  const SizedBox(height: 20),
+                  Container(
+                    padding: const EdgeInsets.all(15),
+                    decoration: BoxDecoration(
+                      color: _getCategoryColor().withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Column(
+                      children: [
+                        // Baris ini dihapus agar tidak menampilkan persentase
+                        // Text(
+                        //   '${percentage.toStringAsFixed(1)}%',
+                        //   style: TextStyle(
+                        //     fontSize: 24,
+                        //     fontWeight: FontWeight.bold,
+                        //     color: _getCategoryColor(),
+                        //   ),
+                        // ),
+                        // const SizedBox(height: 8),
+                        Text(
+                          'Benar $_score Salah $wrongAnswers',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: _getCategoryColor(),
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          'Grade: $grade',
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600,
+                            color: _getCategoryColor(),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 40),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
                 Container(
-                  padding: const EdgeInsets.all(15),
                   decoration: BoxDecoration(
-                    color: _getCategoryColor().withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Column(
-                    children: [
-                      Text(
-                        '${percentage.toStringAsFixed(1)}%',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: _getCategoryColor(),
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        'Benar $_score Salah $wrongAnswers',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: _getCategoryColor(),
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        'Grade: $grade',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          color: _getCategoryColor(),
-                        ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        blurRadius: 5,
+                        offset: const Offset(0, 2),
                       ),
                     ],
                   ),
+                  child: ElevatedButton.icon(
+                    onPressed: () => _selectCategory(_selectedCategory!),
+                    icon: const Icon(Icons.refresh),
+                    label: const Text('Ulangi Quiz'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: _getCategoryColor(),
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.2),
+                        blurRadius: 5,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: ElevatedButton.icon(
+                    onPressed: _backToCategory,
+                    icon: const Icon(Icons.home),
+                    label: const Text('Pilih Level'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.grey[600],
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
-          ),
-          const SizedBox(height: 40),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      blurRadius: 5,
-                      offset: const Offset(0, 2),
-                    ),
-                  ],
-                ),
-                child: ElevatedButton.icon(
-                  onPressed: () => _selectCategory(_selectedCategory!),
-                  icon: const Icon(Icons.refresh),
-                  label: const Text('Ulangi Quiz'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: _getCategoryColor(),
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18),
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
-                      blurRadius: 5,
-                      offset: const Offset(0, 2),
-                    ),
-                  ],
-                ),
-                child: ElevatedButton.icon(
-                  onPressed: _backToCategory,
-                  icon: const Icon(Icons.home),
-                  label: const Text('Pilih Level'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey[600],
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
+          ],
+        ),
       ),
-    ),
-  );
-}
+    );
+  }
 
   Color _getCategoryColor() {
     switch (_selectedCategory) {
@@ -1085,4 +1086,3 @@ class _HalamanKuisState extends State<HalamanKuis> {
     return 'E';
   }
 }
-
