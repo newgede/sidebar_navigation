@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'halaman_kosa_kata.dart';
+import 'package:flutter_bahasa_inggris_1/custom_button_navbar.dart';
 
 class HalamanKategori extends StatelessWidget {
   HalamanKategori({super.key});
@@ -62,7 +63,6 @@ class HalamanKategori extends StatelessWidget {
             final kategori = kategoriList[index];
             return GestureDetector(
               onTap: () {
-                // Debug print untuk memastikan kategori yang dikirim
                 print('Navigating to: ${kategori['nama']}');
                 Navigator.push(
                   context,
@@ -131,6 +131,7 @@ class HalamanKategori extends StatelessWidget {
           },
         ),
       ),
+      bottomNavigationBar: const CustomBottomNavBar(currentIndex: 2),
     );
   }
 }
