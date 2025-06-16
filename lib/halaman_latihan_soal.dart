@@ -124,7 +124,8 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.blue,
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)),
             ),
             child: Text('Selesai', style: TextStyle(color: Colors.white)),
           ),
@@ -138,7 +139,7 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
     final isSmallScreen = screenHeight < 700;
-    
+
     return Scaffold(
       backgroundColor: Colors.grey[50],
       appBar: AppBar(
@@ -168,20 +169,20 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
           currentQuestionIndex == -1
               ? _buildIntroSlide()
               : _buildQuestionContent(screenHeight, screenWidth, isSmallScreen),
-          
-          // Small floating button in bottom right corner
+
+
           if (currentQuestionIndex != -1)
             Positioned(
               bottom: 16,
               right: 16,
               child: FloatingActionButton(
                 onPressed: answerChecked ? handleNext : null,
-                backgroundColor: answerChecked ? Colors.blue: Colors.grey[300],
+                backgroundColor: answerChecked ? Colors.blue : Colors.grey[300],
                 elevation: answerChecked ? 6 : 2,
                 child: Text(
-                  currentQuestionIndex == questions.length - 1 
-                    ? "Finish" 
-                    : "Next",
+                  currentQuestionIndex == questions.length - 1
+                      ? "Finish"
+                      : "Next",
                   style: TextStyle(
                     color: answerChecked ? Colors.white : Colors.grey[600],
                     fontSize: 12,
@@ -192,7 +193,7 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
             ),
         ],
       ),
-      bottomNavigationBar: const CustomBottomNavBar(currentIndex: 2),
+
     );
   }
 
@@ -276,25 +277,29 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
     );
   }
 
-  Widget _buildQuestionContent(double screenHeight, double screenWidth, bool isSmallScreen) {
+  Widget _buildQuestionContent(
+      double screenHeight, double screenWidth, bool isSmallScreen) {
     final question = questions[currentQuestionIndex];
     final progress = (currentQuestionIndex + 1) / questions.length;
-    
+
     return SafeArea(
       child: LayoutBuilder(
         builder: (context, constraints) {
-          // Calculate responsive dimensions
+
           final availableHeight = constraints.maxHeight;
           final progressHeight = isSmallScreen ? 50.0 : 60.0;
-          final imageHeight = isSmallScreen 
-              ? availableHeight * 0.2 
-              : availableHeight * 0.25;
+          final imageHeight =
+              isSmallScreen ? availableHeight * 0.2 : availableHeight * 0.25;
           final questionHeight = isSmallScreen ? 50.0 : 70.0;
-          final optionsHeight = availableHeight - progressHeight - imageHeight - questionHeight - 100; // 100 for padding and floating button
-          
+          final optionsHeight = availableHeight -
+              progressHeight -
+              imageHeight -
+              questionHeight -
+              100; 
+
           return Column(
             children: [
-              // Progress Bar - Responsive height
+              
               Container(
                 height: progressHeight,
                 margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -325,14 +330,15 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
                     LinearProgressIndicator(
                       value: progress,
                       backgroundColor: Colors.grey[300],
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.blue[600]!),
+                      valueColor:
+                          AlwaysStoppedAnimation<Color>(Colors.blue[600]!),
                       minHeight: 6,
                     ),
                   ],
                 ),
               ),
 
-              // Image Section - Responsive height
+              
               Container(
                 height: imageHeight,
                 margin: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
@@ -353,20 +359,19 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
                   child: Image.asset(
                     question['image'],
                     fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) => 
-                      Container(
-                        color: Colors.grey[200],
-                        child: Icon(
-                          Icons.image_not_supported,
-                          size: imageHeight * 0.3,
-                          color: Colors.grey[400],
-                        ),
+                    errorBuilder: (context, error, stackTrace) => Container(
+                      color: Colors.grey[200],
+                      child: Icon(
+                        Icons.image_not_supported,
+                        size: imageHeight * 0.3,
+                        color: Colors.grey[400],
                       ),
+                    ),
                   ),
                 ),
               ),
 
-              // Question Text - Responsive height and font size
+
               Container(
                 constraints: BoxConstraints(
                   minHeight: questionHeight,
@@ -401,10 +406,11 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
                 ),
               ),
 
-              // Options - Responsive height
+              
               Expanded(
                 child: Container(
-                  margin: EdgeInsets.fromLTRB(20, 0, 20, 80), // Bottom padding for floating button
+                  margin: EdgeInsets.fromLTRB(
+                      20, 0, 20, 80),
                   child: Column(
                     children: List.generate(
                       question['options'].length,
@@ -433,7 +439,8 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
     );
   }
 
-  Widget _buildOption(int index, String text, int correctAnswerIndex, bool isSmallScreen) {
+  Widget _buildOption(
+      int index, String text, int correctAnswerIndex, bool isSmallScreen) {
     Color? backgroundColor;
     Color? borderColor;
     Color textColor = Colors.grey[800]!;
@@ -461,14 +468,17 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
     }
 
     return Material(
-      elevation: answerChecked && (index == selectedOptionIndex || index == correctAnswerIndex) ? 4 : 1,
+      elevation: answerChecked &&
+              (index == selectedOptionIndex || index == correctAnswerIndex)
+          ? 4
+          : 1,
       borderRadius: BorderRadius.circular(12),
       child: InkWell(
         onTap: () => handleOptionTap(index),
         borderRadius: BorderRadius.circular(12),
         child: Container(
           padding: EdgeInsets.symmetric(
-            horizontal: 16, 
+            horizontal: 16,
             vertical: isSmallScreen ? 8 : 12,
           ),
           decoration: BoxDecoration(
@@ -516,7 +526,9 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
                 SizedBox(width: 8),
                 Icon(
                   icon,
-                  color: index == correctAnswerIndex ? Colors.green[600] : Colors.red[600],
+                  color: index == correctAnswerIndex
+                      ? Colors.green[600]
+                      : Colors.red[600],
                   size: isSmallScreen ? 18 : 20,
                 ),
               ],
