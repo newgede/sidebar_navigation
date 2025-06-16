@@ -12,7 +12,7 @@ class _HalamanProgresState extends State<HalamanProgres> {
   String email = 'ade.putra@example.com';
   int jumlahKosakata = 120;
   int latihanSelesai = 15;
-  String level = 'Intermediate';
+  String level = 'Beginner';
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class _HalamanProgresState extends State<HalamanProgres> {
                 children: [
                   const CircleAvatar(
                     radius: 50,
-                    backgroundImage: AssetImage('assets/avatar.png'),
+                    backgroundImage: AssetImage('assets/images/ayah mulia.jpg'),
                   ),
                   const SizedBox(height: 12),
                   Text(
