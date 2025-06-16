@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bahasa_inggris_1/halaman_kategori.dart';
-import 'package:flutter_bahasa_inggris_1/halaman_kosa_kata.dart';
-import 'package:flutter_bahasa_inggris_1/halaman_kuis.dart';
-import 'package:flutter_bahasa_inggris_1/halaman_latihan_soal.dart';
+import 'package:flutter_bahasa_inggris_1/halaman_profil.dart';
+import 'package:flutter_bahasa_inggris_1/halaman_progres.dart';
 import 'package:flutter_bahasa_inggris_1/halaman_utama.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
@@ -20,14 +18,11 @@ class CustomBottomNavBar extends StatelessWidget {
       case 1:
          Navigator.push(
           context,
-          MaterialPageRoute(builder: (_) => HalamanKategori()),
+          MaterialPageRoute(builder: (_) => HalamanProgres()),
         );
         break;
       case 2:
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const HalamanLatihanSoal()));
-        break;
-      case 3:
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HalamanKuis()));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) =>  HalamanProfil()));
         break;
     }
   }
@@ -47,16 +42,12 @@ class CustomBottomNavBar extends StatelessWidget {
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.menu_book),
-          label: 'Daftar Kosa Kata',
+          icon: Icon(Icons.track_changes),
+          label: 'Statistik',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.article),
-          label: 'Latihan Soal',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.quiz),
-          label: 'Kuis',
+          label: 'Profil',
         ),
       ],
     );
