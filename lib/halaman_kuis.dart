@@ -216,19 +216,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
     });
   }
 
-  void _backToWelcome() {
-    setState(() {
-      _showWelcome = true;
-      _categorySelected = false;
-      _selectedCategory = null;
-      _questionIndex = 0;
-      _score = 0;
-      _quizFinished = false;
-      _selectedAnswer = null;
-    });
-  }
-
-  @override
+@override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
@@ -239,14 +227,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
             child: SafeArea(
               child: Row(
                 children: [
-                  // Back button - hanya tampil jika tidak sedang dalam kuis
-                  if (!_categorySelected && !_showWelcome)
-                    IconButton(
-                      icon: const Icon(Icons.arrow_back, color: Colors.white),
-                      onPressed: _backToWelcome,
-                    )
-                  else
-                    const SizedBox(width: 48),
+                 const SizedBox(width: 48),
                   Expanded(
                     child: Text(
                       _showWelcome
@@ -279,7 +260,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
           ),
         ],
       ),
-            bottomNavigationBar: const CustomBottomNavBar(currentIndex: 2),
+            bottomNavigationBar: const CustomBottomNavBar(currentIndex: 0),
    );
   }
 
