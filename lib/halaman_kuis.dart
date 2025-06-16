@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bahasa_inggris_1/custom_button_navbar.dart';
 
 class HalamanKuis extends StatefulWidget {
   const HalamanKuis({super.key});
@@ -279,6 +280,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
           ),
         ],
       ),
+      bottomNavigationBar: const CustomBottomNavBar(currentIndex: 3),
    );
   }
 
@@ -884,10 +886,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
     );
   }
 
-  // --- MODIFIED _buildResultsScreen() ---
   Widget _buildResultsScreen() {
-    // double percentage = (_score / _questions.length) * 100; // Tidak digunakan lagi untuk display
-    String grade = _getGrade((_score / _questions.length) * 100); // Grade masih berdasarkan persentase
     int wrongAnswers = _questions.length - _score;
     int finalScore = _score * 20; // Setiap soal bernilai 20 (untuk 5 soal total 100)
 
@@ -972,27 +971,8 @@ class _HalamanKuisState extends State<HalamanKuis> {
                     ),
                     child: Column(
                       children: [
-                        // Baris ini dihapus agar tidak menampilkan persentase
-                        // Text(
-                        //   '${percentage.toStringAsFixed(1)}%',
-                        //   style: TextStyle(
-                        //     fontSize: 24,
-                        //     fontWeight: FontWeight.bold,
-                        //     color: _getCategoryColor(),
-                        //   ),
-                        // ),
-                        // const SizedBox(height: 8),
                         Text(
                           'Benar $_score Salah $wrongAnswers',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            color: _getCategoryColor(),
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          'Grade: $grade',
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w600,
@@ -1045,8 +1025,8 @@ class _HalamanKuisState extends State<HalamanKuis> {
                   ),
                   child: ElevatedButton.icon(
                     onPressed: _backToCategory,
-                    icon: const Icon(Icons.home),
-                    label: const Text('Pilih Level'),
+                    icon: const Icon(Icons.exit_to_app), // Changed icon
+                    label: const Text('Selesai'), // Changed text
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.grey[600],
                       foregroundColor: Colors.white,
@@ -1076,13 +1056,5 @@ class _HalamanKuisState extends State<HalamanKuis> {
       default:
         return const Color(0xFF2052BD);
     }
-  }
-
-  String _getGrade(double percentage) {
-    if (percentage >= 90) return 'A';
-    if (percentage >= 80) return 'B';
-    if (percentage >= 70) return 'C';
-    if (percentage >= 50) return 'D';
-    return 'E';
   }
 }
