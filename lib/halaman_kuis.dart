@@ -682,7 +682,6 @@ class _HalamanKuisState extends State<HalamanKuis> {
                   : _buildTextOptions(currentQuestion),
             ),
 
-            // Tombol next/selesai
             if (_hasAnswered)
               Align(
                 alignment: Alignment.centerRight,
@@ -1001,7 +1000,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
                   ),
                   child: ElevatedButton.icon(
                     onPressed: () => _selectCategory(_selectedCategory!),
-                    icon: const Icon(Icons.refresh),
+                    icon: const Icon(Icons.refresh,color: Colors.white,),
                     label: const Text('Ulangi Quiz'),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: _getCategoryColor(),
@@ -1025,7 +1024,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
                   ),
                   child: ElevatedButton.icon(
                     onPressed: _backToCategory,
-                    icon: const Icon(Icons.exit_to_app), // Changed icon
+                    icon: const Icon(Icons.exit_to_app, color: Colors.white,), // Changed icon
                     label: const Text('Selesai'), // Changed text
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.grey[600],
