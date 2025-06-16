@@ -293,7 +293,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Colors.blue,
+            const Color.fromARGB(141, 255, 255, 255),
             Colors.white.withOpacity(0.8),
           ],
         ),
@@ -375,7 +375,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    'Tes kemampuan Bahasa Inggris anda bersama Bapak Muliadi\ndengan berbagai tingkat kesulitan',
+                    'Tes kemampuan Bahasa Inggris anda bersama Ibu Mulia\ndengan berbagai tingkat kesulitan',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.grey,
@@ -880,175 +880,187 @@ class _HalamanKuisState extends State<HalamanKuis> {
     );
   }
 
-  Widget _buildResultsScreen() {
-    double percentage = (_score / _questions.length) * 100;
-    String grade = _getGrade(percentage);
+ Widget _buildResultsScreen() {
+  double percentage = (_score / _questions.length) * 100;
+  String grade = _getGrade(percentage);
+  int wrongAnswers = _questions.length - _score;
+  int finalScore = _score * 20; // Setiap soal bernilai 20 (untuk 5 soal total 100)
 
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.8),
-      ),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(30),
-              decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.95),
-                border: Border.all(color: _getCategoryColor(), width: 2),
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.2),
-                    blurRadius: 15,
-                    offset: const Offset(0, 5),
-                  ),
-                ],
-              ),
-              child: Column(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-                    decoration: BoxDecoration(
-                      color: _getCategoryColor(),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Text(
-                      _selectedCategory!,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  const Text(
-                    'HASIL AKHIR',
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  Text(
-                    '$_score',
-                    style: TextStyle(
-                      fontSize: 80,
-                      fontWeight: FontWeight.bold,
-                      color: _getCategoryColor(),
-                    ),
-                  ),
-                  const SizedBox(height: 5),
-                  Text(
-                    'dari ${_questions.length}',
-                    style: const TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey,
-                    ),
-                  ),
-                  const SizedBox(height: 15),
-                  Text(
-                    'Jawaban Benar',
-                    style: const TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  Container(
-                    padding: const EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      color: _getCategoryColor().withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Column(
-                      children: [
-                        Text(
-                          '${percentage.toStringAsFixed(1)}%',
-                          style: TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: _getCategoryColor(),
-                          ),
-                        ),
-                        Text(
-                          'Grade: $grade',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            color: _getCategoryColor(),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+  return Container(
+    decoration: BoxDecoration(
+      color: Colors.white.withOpacity(0.8),
+    ),
+    child: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(30),
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.95),
+              border: Border.all(color: _getCategoryColor(), width: 2),
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  blurRadius: 15,
+                  offset: const Offset(0, 5),
+                ),
+              ],
             ),
-            const SizedBox(height: 40),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            child: Column(
               children: [
                 Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                   decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        blurRadius: 5,
-                        offset: const Offset(0, 2),
-                      ),
-                    ],
+                    color: _getCategoryColor(),
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                  child: ElevatedButton.icon(
-                    onPressed: () => _selectCategory(_selectedCategory!),
-                    icon: const Icon(Icons.refresh),
-                    label: const Text('Ulangi Quiz'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: _getCategoryColor(),
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18),
-                      ),
+                  child: Text(
+                    _selectedCategory!,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
                 ),
+                const SizedBox(height: 20),
+                const Text(
+                  'HASIL AKHIR',
+                  style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                Text(
+                  '$finalScore', // Menampilkan skor dalam skala 100
+                  style: TextStyle(
+                    fontSize: 80,
+                    fontWeight: FontWeight.bold,
+                    color: _getCategoryColor(),
+                  ),
+                ),
+                const SizedBox(height: 5),
+                Text(
+                  'dari 100',
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.grey,
+                  ),
+                ),
+                const SizedBox(height: 15),
+                Text(
+                  'Jawaban Benar',
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black87,
+                  ),
+                ),
+                const SizedBox(height: 20),
                 Container(
+                  padding: const EdgeInsets.all(15),
                   decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.2),
-                        blurRadius: 5,
-                        offset: const Offset(0, 2),
+                    color: _getCategoryColor().withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Column(
+                    children: [
+                      Text(
+                        '${percentage.toStringAsFixed(1)}%',
+                        style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: _getCategoryColor(),
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'Benar $_score Salah $wrongAnswers',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: _getCategoryColor(),
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'Grade: $grade',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: _getCategoryColor(),
+                        ),
                       ),
                     ],
-                  ),
-                  child: ElevatedButton.icon(
-                    onPressed: _backToCategory,
-                    icon: const Icon(Icons.home),
-                    label: const Text('Pilih Level'),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.grey[600],
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18),
-                      ),
-                    ),
                   ),
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+          const SizedBox(height: 40),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.2),
+                      blurRadius: 5,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: ElevatedButton.icon(
+                  onPressed: () => _selectCategory(_selectedCategory!),
+                  icon: const Icon(Icons.refresh),
+                  label: const Text('Ulangi Quiz'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: _getCategoryColor(),
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.2),
+                      blurRadius: 5,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
+                ),
+                child: ElevatedButton.icon(
+                  onPressed: _backToCategory,
+                  icon: const Icon(Icons.home),
+                  label: const Text('Pilih Level'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.grey[600],
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
-    );
-  }
+    ),
+  );
+}
 
   Color _getCategoryColor() {
     switch (_selectedCategory) {
