@@ -225,7 +225,6 @@ class _HalamanKuisState extends State<HalamanKuis> {
       _score = 0;
       _quizFinished = false;
       _selectedAnswer = null;
-      _hasAnswered = false;
     });
   }
 
@@ -280,11 +279,11 @@ class _HalamanKuisState extends State<HalamanKuis> {
           ),
         ],
       ),
-      bottomNavigationBar: const CustomBottomNavBar(currentIndex: 3),
+            bottomNavigationBar: const CustomBottomNavBar(currentIndex: 2),
    );
   }
 
-  // --- MODIFIED _buildWelcomeScreen() ---
+  // --- _buildWelcomeScreen() ---
   Widget _buildWelcomeScreen() {
     return SingleChildScrollView( // Membungkus dengan SingleChildScrollView
       child: Container(
@@ -433,7 +432,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
     );
   }
 
-  // --- MODIFIED _buildCategorySelectionScreen() ---
+  // --- _buildCategorySelectionScreen() ---
   Widget _buildCategorySelectionScreen() {
     return SingleChildScrollView( // Membungkus dengan SingleChildScrollView
       child: Container(
@@ -886,6 +885,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
     );
   }
 
+  // --- MODIFIED _buildResultsScreen() ---
   Widget _buildResultsScreen() {
     int wrongAnswers = _questions.length - _score;
     int finalScore = _score * 20; // Setiap soal bernilai 20 (untuk 5 soal total 100)
