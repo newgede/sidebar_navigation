@@ -169,8 +169,6 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
           currentQuestionIndex == -1
               ? _buildIntroSlide()
               : _buildQuestionContent(screenHeight, screenWidth, isSmallScreen),
-
-
           if (currentQuestionIndex != -1)
             Positioned(
               bottom: 16,
@@ -193,7 +191,7 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
             ),
         ],
       ),
-
+      bottomNavigationBar: const CustomBottomNavBar(currentIndex: 2),
     );
   }
 
@@ -285,7 +283,6 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
     return SafeArea(
       child: LayoutBuilder(
         builder: (context, constraints) {
-
           final availableHeight = constraints.maxHeight;
           final progressHeight = isSmallScreen ? 50.0 : 60.0;
           final imageHeight =
@@ -295,11 +292,10 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
               progressHeight -
               imageHeight -
               questionHeight -
-              100; 
+              100;
 
           return Column(
             children: [
-              
               Container(
                 height: progressHeight,
                 margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -337,8 +333,6 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
                   ],
                 ),
               ),
-
-              
               Container(
                 height: imageHeight,
                 margin: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
@@ -370,8 +364,6 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
                   ),
                 ),
               ),
-
-
               Container(
                 constraints: BoxConstraints(
                   minHeight: questionHeight,
@@ -405,12 +397,9 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
                   ),
                 ),
               ),
-
-              
               Expanded(
                 child: Container(
-                  margin: EdgeInsets.fromLTRB(
-                      20, 0, 20, 80),
+                  margin: EdgeInsets.fromLTRB(20, 0, 20, 80),
                   child: Column(
                     children: List.generate(
                       question['options'].length,
