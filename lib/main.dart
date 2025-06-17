@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
       title: 'Aplikasi Belajar Bahasa',
       debugShowCheckedModeBanner: false,
       home: HalamanLogin(),

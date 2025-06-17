@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bahasa_inggris_1/halaman_kuis.dart';
 import 'package:flutter_bahasa_inggris_1/halaman_latihan_soal.dart';
+import 'package:flutter_bahasa_inggris_1/custom_button_navbar.dart';
 import 'halaman_kategori.dart';
 
 class HalamanUtama extends StatelessWidget {
@@ -156,6 +157,7 @@ class HalamanUtama extends StatelessWidget {
           )
         ],
       ),
+      bottomNavigationBar: const CustomBottomNavBar(currentIndex: 2),
     );
   }
 
