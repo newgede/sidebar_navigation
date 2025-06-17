@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bahasa_inggris_1/custom_button_navbar.dart';
 
+
 class HalamanKuis extends StatefulWidget {
   const HalamanKuis({super.key});
+  
 
   @override
   _HalamanKuisState createState() => _HalamanKuisState();
@@ -227,7 +229,26 @@ class _HalamanKuisState extends State<HalamanKuis> {
             child: SafeArea(
               child: Row(
                 children: [
-                 const SizedBox(width: 48),
+                  // MODIFIKASI DIMULAI DI SINI
+                  if (_showWelcome)
+                    IconButton(
+                      icon: const Icon(Icons.arrow_back, color: Colors.black),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    )
+                    else if (!_categorySelected) // If on category selection screen, show back button to welcome
+                  IconButton(
+                    icon: const Icon(Icons.arrow_back, color: Colors.black), // Changed color to white for visibility
+                    onPressed: () {
+                      setState(() {
+                        _showWelcome = true; // Go back to welcome screen
+                      });
+                    },
+                  )
+                     else
+                    const SizedBox(width: 48), // Placeholder agar judul tetap sejajar
+                  // MODIFIKASI BERAKHIR DI SINI
                   Expanded(
                     child: Text(
                       _showWelcome
@@ -260,7 +281,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
           ),
         ],
       ),
-            bottomNavigationBar: const CustomBottomNavBar(currentIndex: 0),
+      bottomNavigationBar: const CustomBottomNavBar(currentIndex: 2),
    );
   }
 
@@ -875,6 +896,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(height: 60), // Add this line to push content down
             Container(
               padding: const EdgeInsets.all(30),
               decoration: BoxDecoration(
