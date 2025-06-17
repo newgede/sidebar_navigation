@@ -44,7 +44,7 @@ class HalamanKategori extends StatelessWidget {
           ),
         ),
         backgroundColor: Colors.blue,
-        foregroundColor: Colors.black,
+        foregroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
       ),

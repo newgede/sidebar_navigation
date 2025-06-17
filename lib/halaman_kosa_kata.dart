@@ -362,7 +362,7 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
         appBar: AppBar(
           title: Text('${widget.kategori}'),
           backgroundColor: Colors.blue,
-          foregroundColor: Colors.black,
+          foregroundColor: Colors.white,
         ),
         body: Center(
           child: Column(
@@ -387,7 +387,7 @@ class _HalamanKosaKataState extends State<HalamanKosaKata> {
         ),
         backgroundColor: Colors.blue,
         centerTitle: true,
-        foregroundColor: Colors.black,
+        foregroundColor: Colors.white,
         actions: [
           Container(
             padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
