@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bahasa_inggris_1/custom_button_navbar.dart';
+import 'package:flutter_bahasa_inggris_1/halaman_notifikasi.dart'; 
 import 'package:flutter_bahasa_inggris_1/halaman_kuis.dart';
 import 'package:flutter_bahasa_inggris_1/halaman_latihan_soal.dart';
 import 'halaman_kategori.dart';
@@ -50,8 +51,10 @@ class HalamanUtama extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.notifications, color: Colors.white),
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Tidak ada notifikasi baru')),
+              // Navigate to HalamanNotifikasi
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const HalamanNotifikasi()),
               );
             },
           ),
@@ -164,7 +167,7 @@ class HalamanUtama extends StatelessWidget {
           ),
         ],
       ),
-            bottomNavigationBar: const CustomBottomNavBar(currentIndex: 0),
+      bottomNavigationBar: const CustomBottomNavBar(currentIndex: 2), // Changed currentIndex to 0 for Home
     );
   }
 

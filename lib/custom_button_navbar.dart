@@ -3,28 +3,31 @@ import 'package:flutter_bahasa_inggris_1/halaman_profil.dart';
 import 'package:flutter_bahasa_inggris_1/halaman_progres.dart';
 import 'package:flutter_bahasa_inggris_1/halaman_utama.dart';
 
+
 class CustomBottomNavBar extends StatelessWidget {
   final int currentIndex;
 
   const CustomBottomNavBar({super.key, required this.currentIndex});
 
   void _onItemTapped(BuildContext context, int index) {
-    if (index == currentIndex) return;
+    // HAPUS baris ini untuk memastikan tombol navbar selalu responsif,
+    // bahkan jika Anda mengklik tab yang sedang aktif.
+    // if (index == currentIndex) return;
 
     switch (index) {
-      case 0:
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) =>  HalamanUtama()));
+      case 0: // Index 0 untuk Home
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const HalamanUtama()));
         break;
-      case 1:
-         Navigator.push(
+      case 1: // Index 1 untuk Statistik/Progres
+         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (_) => HalamanProgres()),
+          MaterialPageRoute(builder: (_) => const HalamanProgres()),
         );
         break;
-      case 2:
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) =>  HalamanProfil()));
+      case 2: // Index 2 untuk Profil
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const HalamanProfil()));
         break;
-    }
+      }
   }
 
   @override
@@ -42,14 +45,14 @@ class CustomBottomNavBar extends StatelessWidget {
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.track_changes),
+          icon: Icon(Icons.track_changes), // Menggunakan track_changes untuk Statistik/Progres
           label: 'Statistik',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.article),
+          icon: Icon(Icons.person), // Mengganti ikon ke person untuk Profil
           label: 'Profil',
         ),
-      ],
+        ],
     );
   }
 }

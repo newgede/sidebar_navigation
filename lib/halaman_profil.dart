@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bahasa_inggris_1/custom_button_navbar.dart'; // Import the CustomBottomNavBar
+
 
 class HalamanProfil extends StatefulWidget {
   const HalamanProfil({Key? key}) : super(key: key);
@@ -121,7 +121,6 @@ class _HalamanProfilState extends State<HalamanProfil> {
           ],
         ),
       ),
-      bottomNavigationBar: const CustomBottomNavBar(currentIndex: 2), // Add this line
     );
   }
 
