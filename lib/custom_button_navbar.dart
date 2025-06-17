@@ -10,24 +10,22 @@ class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({super.key, required this.currentIndex});
 
   void _onItemTapped(BuildContext context, int index) {
-    // HAPUS baris ini untuk memastikan tombol navbar selalu responsif,
-    // bahkan jika Anda mengklik tab yang sedang aktif.
-    // if (index == currentIndex) return;
+    
 
-    switch (index) {
-      case 0: // Index 0 untuk Home
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const HalamanUtama()));
+   switch (index) {
+      case 0:
+        Navigator.push(context, MaterialPageRoute(builder: (_) => const HalamanUtama())); // Ganti pushReplacement
         break;
-      case 1: // Index 1 untuk Statistik/Progres
-         Navigator.pushReplacement(
+      case 1:
+         Navigator.push( // Ganti pushReplacement
           context,
           MaterialPageRoute(builder: (_) => const HalamanProgres()),
         );
         break;
-      case 2: // Index 2 untuk Profil
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const HalamanProfil()));
+      case 2:
+        Navigator.push(context, MaterialPageRoute(builder: (_) => const HalamanProfil())); // Ganti pushReplacement
         break;
-      }
+    }
   }
 
   @override
