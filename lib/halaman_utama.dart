@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bahasa_inggris_1/custom_button_navbar.dart';
 import 'package:flutter_bahasa_inggris_1/halaman_kuis.dart';
 import 'package:flutter_bahasa_inggris_1/halaman_latihan_soal.dart';
 import 'halaman_kategori.dart';
@@ -132,7 +133,8 @@ class HalamanUtama extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => HalamanLatihanSoal()),
+                    MaterialPageRoute(
+                        builder: (context) => const HalamanLatihanSoal()),
                   );
                 },
               ),
@@ -143,7 +145,8 @@ class HalamanUtama extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => HalamanKuis()),
+                    MaterialPageRoute(
+                        builder: (context) => const HalamanKuis()),
                   );
                 },
               ),
@@ -151,11 +154,17 @@ class HalamanUtama extends StatelessWidget {
                 icon: Icons.chat,
                 title: "Chat",
                 color: const Color.fromARGB(255, 141, 241, 230), // pastel mint
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Fitur Chat belum tersedia')),
+                  );
+                },
               ),
             ],
-          )
+          ),
         ],
       ),
+      bottomNavigationBar: const CustomBottomNavBar(currentIndex: 0),
     );
   }
 
