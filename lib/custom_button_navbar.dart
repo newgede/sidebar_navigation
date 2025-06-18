@@ -3,7 +3,6 @@ import 'package:flutter_bahasa_inggris_1/halaman_profil.dart';
 import 'package:flutter_bahasa_inggris_1/halaman_progres.dart';
 import 'package:flutter_bahasa_inggris_1/halaman_utama.dart';
 
-
 class CustomBottomNavBar extends StatelessWidget {
   final int currentIndex;
 

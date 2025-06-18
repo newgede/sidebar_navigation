@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bahasa_inggris_1/halaman_kuis.dart';
 import 'package:flutter_bahasa_inggris_1/halaman_latihan_soal.dart';
 import 'package:flutter_bahasa_inggris_1/custom_button_navbar.dart';
+import 'package:flutter_bahasa_inggris_1/halaman_chat.dart';
 import 'halaman_kategori.dart';
 
 class HalamanUtama extends StatelessWidget {
@@ -152,6 +153,12 @@ class HalamanUtama extends StatelessWidget {
                 icon: Icons.chat,
                 title: "Chat",
                 color: const Color.fromARGB(255, 141, 241, 230), // pastel mint
+                onTap: () { // Add this onTap
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HalamanChat()),
+                  );
+                },
               ),
             ],
           )
