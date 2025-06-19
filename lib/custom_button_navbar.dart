@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bahasa_inggris_1/halaman_profil.dart';
-import 'package:flutter_bahasa_inggris_1/halaman_progres.dart';
 import 'package:flutter_bahasa_inggris_1/halaman_utama.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
@@ -9,21 +8,18 @@ class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({super.key, required this.currentIndex});
 
   void _onItemTapped(BuildContext context, int index) {
-    
-
-   switch (index) {
+    switch (index) {
       case 0:
-        Navigator.push(context, MaterialPageRoute(builder: (_) => const HalamanUtama())); // Ganti pushReplacement
-        break;
-      case 1:
-         Navigator.push( // Ganti pushReplacement
+        Navigator.push(
           context,
-          MaterialPageRoute(builder: (_) => const HalamanProgres()),
+          MaterialPageRoute(builder: (_) => const HalamanUtama()),
         );
         break;
-      case 2:
-        Navigator.push(context, MaterialPageRoute(builder: (_) => const HalamanProfil())); // Ganti pushReplacement
-        break;
+      case 1:
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) => const HalamanProfil()),
+        );
     }
   }
 
@@ -42,14 +38,10 @@ class CustomBottomNavBar extends StatelessWidget {
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.track_changes), // Menggunakan track_changes untuk Statistik/Progres
-          label: 'Statistik',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person), // Mengganti ikon ke person untuk Profil
+          icon: Icon(Icons.person),
           label: 'Profil',
         ),
-        ],
+      ],
     );
   }
 }

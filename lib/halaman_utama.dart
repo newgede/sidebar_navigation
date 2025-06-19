@@ -164,7 +164,7 @@ class HalamanUtama extends StatelessWidget {
           )
         ],
       ),
-      bottomNavigationBar: const CustomBottomNavBar(currentIndex: 2),
+      bottomNavigationBar: const CustomBottomNavBar(currentIndex: 1),
     );
   }
 

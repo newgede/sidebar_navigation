@@ -191,7 +191,7 @@ class _HalamanLatihanSoalState extends State<HalamanLatihanSoal> {
             ),
         ],
       ),
-      bottomNavigationBar: const CustomBottomNavBar(currentIndex: 2),
+      bottomNavigationBar: const CustomBottomNavBar(currentIndex: 1),
     );
   }
 

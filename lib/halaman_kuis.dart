@@ -281,7 +281,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
           ),
         ],
       ),
-      bottomNavigationBar: const CustomBottomNavBar(currentIndex: 2),
+      bottomNavigationBar: const CustomBottomNavBar(currentIndex: 1),
    );
   }
 
