@@ -107,7 +107,7 @@ class _HalamanChatState extends State<HalamanChat> {
           ),
         ],
       ),
-        bottomNavigationBar: const CustomBottomNavBar(currentIndex: 2),
+        bottomNavigationBar: const CustomBottomNavBar(currentIndex: 1),
     );
   }
 
