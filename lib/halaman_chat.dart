@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bahasa_inggris_1/custom_button_navbar.dart';
 
 // Definisi kelas ChatMessage
 class ChatMessage {
@@ -39,7 +40,7 @@ class _HalamanChatState extends State<HalamanChat> {
       appBar: AppBar(
         title: const Text('Chat', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.blue,
-        iconTheme: const IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.black),
       ),
       body: Column(
         children: [
@@ -106,6 +107,7 @@ class _HalamanChatState extends State<HalamanChat> {
           ),
         ],
       ),
+        bottomNavigationBar: const CustomBottomNavBar(currentIndex: 2),
     );
   }
 
@@ -114,10 +116,5 @@ class _HalamanChatState extends State<HalamanChat> {
     final hour = timestamp.hour.toString().padLeft(2, '0');
     final minute = timestamp.minute.toString().padLeft(2, '0');
     return '$hour:$minute'; // Contoh format HH:MM
-    // Jika Anda ingin tanggal juga, Anda bisa menambahkan:
-    // final day = timestamp.day.toString().padLeft(2, '0');
-    // final month = timestamp.month.toString().padLeft(2, '0');
-    // final year = timestamp.year.toString().substring(2);
-    // return '$hour:$minute $day/$month/$year';
   }
 }
