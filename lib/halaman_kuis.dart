@@ -485,7 +485,7 @@ class _HalamanKuisState extends State<HalamanKuis> {
                   ],
                 ),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 20),
               _buildCategoryButton(
                 'Easy',
                 'Mudah (5 soal)',
